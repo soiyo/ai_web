@@ -1,0 +1,43 @@
+<!-- css로 꾸미기, login page -->
+<!-- 궁금한점! 로그인 페이지를 감싸는 회색 상자 어떻게 만들까? -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .mytitle {
+                width: 300px;
+                height: 200px;
+                color: white;
+                text-align: center;
+                background-image: url(https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg);
+                background-size: cover;
+                background-position: center;
+                margin-top: 40px;
+                padding-top: 40px;
+                border-radius: 30px;
+            }
+            .mybtn {
+                padding-top: 40px;
+            }
+            .wrap {
+                width: 350px;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="mytitle">
+                <h1>로그인 페이지</h1>
+                <h5>아이디, 비밀번호를 입력해주세요</h5>
+            </div>
+            <p>id: <input type="text" /></p>
+            <p>pw: <input type="text" /></p>
+            <button>login</button>
+        </div>
+    </body>
+</html>
