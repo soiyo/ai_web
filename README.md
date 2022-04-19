@@ -6,4 +6,4 @@
 
 -   [🏡 모여봐요 동물의 숲 자랑하기 사이트](http://cafehyeon.shop/)
 
-    ![jpg_1](./image/AnimalcrossingPage_sample.png)
+    ![jpg_1](./image/AnimalcrossingPage_.png)
