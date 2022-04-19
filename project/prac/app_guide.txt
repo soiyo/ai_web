@@ -1,0 +1,33 @@
+#app.py
+#로컬 개발환경 셋팅
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+   return '나의 첫 서버! 9줄만으로 서버 만듬(엄청 간편한 파이썬의 세계)'
+
+@app.route('/mypage') #여기에 같은 도메인 안쓰게 주의
+def mypage(): #여기에 같은 함수명 안쓰게 주의
+   return 'mypage 입니다'
+
+@app.route('/index')
+def index():
+   return render_template('index.html')
+
+@app.route('/test', methods=['GET'])
+def test_get():
+   title_receive = request.args.get('title_give')
+   print(title_receive)
+   return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
+
+@app.route('/testPost', methods=['POST'])
+def test_post():
+   title_receive = request.form['title_give']
+   print(title_receive)
+   return jsonify({'result':'success', 'msg': '이 요청은 POST!'})
+
+
+if __name__ == '__main__':  
+   app.run('0.0.0.0',port=5000,debug=True)
+
