@@ -1,3 +1,4 @@
+<!-- 미세먼지 데이터 출력 : 90이상은 빨간색으로 -->
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -28,7 +29,12 @@
                         for (let i = 0; i < rows.length; i++) {
                             let gu_name = rows[i]['MSRSTE_NM'];
                             let gu_mise = rows[i]['IDEX_MVL'];
-                            let temp_html = `<li>${gu_name} : ${gu_mise}</li>`;
+                            let temp_html = '';
+                            if (gu_mise > 90) {
+                                temp_html = `<li class='bad'>${gu_name} : ${gu_mise}</li>`;
+                            } else {
+                                temp_html = `<li>${gu_name} : ${gu_mise}</li>`;
+                            }
                             $('#names-q1').append(temp_html);
                         }
                     },

@@ -1,0 +1,51 @@
+<!-- 르탄이 나와! , 다양한 API로 서버에서 콜 받아와서 웹사이트에 활용 가능 -->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JQuery 연습하고 가기!</title>
+        <!-- JQuery를 import 합니다 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <style type="text/css">
+            div.question-box {
+                margin: 10px 0 20px 0;
+            }
+            div.question-box > div {
+                margin-top: 30px;
+            }
+        </style>
+
+        <script>
+            function q1() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://spartacodingclub.shop/sparta_api/rtan', //API주소
+                    data: {},
+                    success: function (response) {
+                        let url = response['url'];
+                        let msg = response['msg'];
+                        $('#img-rtan').attr('src', url); //attr의 src값을 url로 바꾸고싶어요
+                        $('#text-rtan').text(msg); //문자열도 바꾸고 싶어요
+                    },
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h1>JQuery+Ajax의 조합을 연습하자!</h1>
+
+        <hr />
+
+        <div class="question-box">
+            <h2>3. 르탄이 API를 이용하기!</h2>
+            <p>아래를 르탄이 사진으로 바꿔주세요</p>
+            <p>업데이트 버튼을 누를 때마다 지웠다 새로 씌여져야 합니다.</p>
+            <button onclick="q1()">르탄이 나와</button>
+            <div>
+                <img id="img-rtan" width="300" src="http://spartacodingclub.shop/static/images/rtans/SpartaIcon01.png" />
+                <h1 id="text-rtan">무슨 르탄이가 나올까?</h1>
+            </div>
+        </div>
+    </body>
+</html>

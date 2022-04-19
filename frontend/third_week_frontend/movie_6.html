@@ -1,4 +1,4 @@
-<!-- 내 생애 최고의 영화 배너 제작_4_javascript연습4, postingbox열고닫기 -->
+<!-- 내 생애 최고의 영화 배너 제작_6_javascript연습4, postingbox열고닫기 -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -82,6 +82,45 @@
             }
         </style>
         <script>
+            $(document).ready(function () {
+                listing();
+            });
+
+            function listing() {
+                $('#cards-box').empty(); //ajax 콜 날리기 전에 원래 샘플내역 있던거 지워줘라
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://spartacodingclub.shop/web/api/movie', //API주소
+                    data: {},
+                    success: function (response) {
+                        let rows = response['movies'];
+                        for (let i = 0; i < rows.length; i++) {
+                            let title = rows[i]['title'];
+                            let desc = rows[i]['desc'];
+                            let image = rows[i]['image'];
+                            let star = rows[i]['star'];
+                            let comment = rows[i]['comment'];
+
+                            let star_image = '⭐️'.repeat(star); //star가 2면 2개 출력,(js반복문)
+
+                            let temp_html = `<div class="col">
+                                <div class="card h-100">
+                                    <img src="${image}" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">"${title}"</h5>
+                                        <p class="card-text">"${desc}"</p>
+                                        <p>"${star_image}"</p>
+                                        <p class="mycomment">"${comment}"</p>
+                                    </div>
+                                </div>
+                            </div>`;
+                            $('#cards-box').append(temp_html);
+
+                            console.log(title, desc, image, star, comment);
+                        }
+                    },
+                });
+            }
             function open_box() {
                 $('#post-box').show();
             }
