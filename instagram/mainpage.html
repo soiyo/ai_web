@@ -117,6 +117,116 @@
             .img_margin {
                 margin: 0px 0px 0px 150px;
             }
+            .profile_img_margin{
+                margin: 10px 0px 0px 10px;
+            }
+            .big_profile_img_margin{
+                margin: 10px 0px 0px 4px;
+            }
+            /*사이드바 자체 속성*/
+            .sidenav {
+                margin: 50px 0 0 0;
+                width: 25%;
+                height: 100%;
+                position: fixed;
+                z-index: 1;
+                top: 84px;
+                left: 65%;
+                
+            }
+
+            /*사이드바 가로정렬*/
+            .column {
+                float: left;
+            }
+            /*3분할시 가로로정렬*/
+            .row:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+            /*3분할시 가장 왼쪽*/
+            .left {
+                width: 20%;
+            }
+            .middle_left {
+                margin: 0px 0px 0px 5px;
+                width: 20%;
+            }
+            /*3분할시 가운데*/
+            .middle {
+                margin: 23px 5px 0px 20px;
+                width: 60%;
+            }
+            .middle_small {
+                margin: 10px 0px 0px 0px;
+                width: 60%;
+            }
+            /*3분할시 가장 오른쪽*/
+            .right {
+                margin: 30px 0px 0px 5px;
+                width: 11%;
+            }
+            .middle_right {
+                margin: 13px 0px 0px 20px;
+                width: 11%;
+            }
+            /*왼쪽정렬, 오른쪽정렬*/
+            .recommend_left {
+                margin: 18px 0px 0px 0px;
+                width: 50%;
+            }
+            .recommend_right {
+                margin: 18px 0px 0px 118px;
+                width: 13%;
+            }
+            /*프로필 4개 관할하는 창*/
+            .all-browsers {
+                margin: 0;
+                padding: 5px;
+            }
+            
+
+            /*링크에 기본적용되는 파란줄 없애기*/
+            a:link {
+                text-decoration: none;
+            }
+            /*글씨속성지정-id*/
+            .link_id {
+                color: var(--black);
+                font-size: 14px;
+                font-weight: bolder;
+            }
+            /*글씨속성지정-팔로우, 전환*/
+            .link_follow {
+                color: var(--blue);
+                font-size: 12px;
+            }
+            /*글씨속성지정-설명*/
+            .desc {
+                color: var(--gray);
+                font-size: 12px;
+            }
+            /*글씨속성지정-모두보기*/
+            .show_all {
+                color: var(--black);
+                font-weight: bolder;
+                font-size: 12px;
+            }
+            /*글씨속성지정-회원님을 위한 추천*/
+            .recommend {
+                font-weight: bolder;
+                color: var(--gray);
+            }
+            /*글씨속성지정-footer*/
+            footer {
+                text-align: left;
+                padding: 3px;
+                background-color: transparent;
+                color: var(--gray);
+                font-weight: lighter;
+                font-size: 12px;
+            }
         </style>
     </head>
     <body>
@@ -137,51 +247,148 @@
                     <a href="#"><i class="fa fa-home fa-lg"></i></a>
                     <i class="fa-regular fa-heart"></i>
                     <a href="#"><i class="fa fa-plane fa-lg"></i></a>
-                    <a href="#"><i class="fa fa-envelope fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-plus-square fa-lg"></i></a>
                     <a href="#"><i class="fa fa-globe fa-lg"></i></a>
                     <a href="#"><i class="fa fa-heart fa-lg"></i></a>
                     <a href="#"><i class="fa fa-circle fa-lg"></i></a>
                 </div>
             </div>
-        </div>
-        <div class="#">
-            <h2>Instagram</h2>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
-            <p>Add media querise and background color</p>
+
+            <div class="sidenav">
+                <!-- 내 프로필 -->
+                <div class="browser row">
+                    <div class="column left">
+                        <a href="#about"><img class="big_profile_img_margin" src="static/big_profile.png" /></a>
+                    </div>
+                    <div class="column middle">
+                        <a href="#about" class="link_id">hello_world</a><br />
+                        <a class="desc">클로닝중</a>
+                    </div>
+                    <div class="column right">
+                        <a href="#about" class="link_follow">전환</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="recommend recommend_left column middle">회원님을 위한 추천</p>
+                    <a href="#about" class="show_all recommend_right column middle">모두보기</a>
+                </div>
+                    <!-- 사용자 1 -->
+                    <div class="browser row">
+                        <div class="column middle_left">
+                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                        </div>
+                        <div class="column middle_small">
+                            <a href="#about" class="link_id">사용자아이디</a><br />
+                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                        </div>
+                        <div class="column middle_right">
+                            <a href="#about" class="link_follow">팔로우</a>
+                        </div>
+                    </div>
+
+                    <!-- 사용자 2 -->
+                    <div class="browser row">
+                        <div class="column middle_left">
+                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                        </div>
+                        <div class="column middle_small">
+                            <a href="#about" class="link_id">사용자아이디</a><br />
+                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                        </div>
+                        <div class="column middle_right">
+                            <a href="#about" class="link_follow">팔로우</a>
+                        </div>
+                    </div>
+
+                    <!-- 사용자 3 -->
+                    <div class="browser row">
+                        <div class="column middle_left">
+                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                        </div>
+                        <div class="column middle_small">
+                            <a href="#about" class="link_id">사용자아이디</a><br />
+                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                        </div>
+                        <div class="column middle_right">
+                            <a href="#about" class="link_follow">팔로우</a>
+                        </div>
+                    </div>
+                    <!-- 사용자 4 -->
+                    <div class="browser row">
+                        <div class="column middle_left">
+                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                        </div>
+                        <div class="column middle_small">
+                            <a href="#about" class="link_id">사용자아이디</a><br />
+                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                        </div>
+                        <div class="column middle_right">
+                            <a href="#about" class="link_follow">팔로우</a>
+                        </div>
+                    </div>
+                    <!-- 사용자 5 -->
+                    <div class="browser row">
+                        <div class="column middle_left">
+                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                        </div>
+                        <div class="column middle_small">
+                            <a href="#about" class="link_id">사용자아이디</a><br />
+                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                        </div>
+                        <div class="column middle_right">
+                            <a href="#about" class="link_follow">팔로우</a>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <a href="#about"><br>
+                            소개.도움말.홍보 센터.API.채용정보<br />
+                            개인정보처리방침.약관.위치.인기 계정.해시태그/언어<br /><br />
+                            @2022 INSTAGRAM FROM GAHYEON
+                        </a>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="#">
+                <h2>Instagram</h2>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+                <p>Add media querise and background color</p>
+            </div>
         </div>
     </body>
 </html>
