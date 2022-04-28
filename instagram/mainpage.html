@@ -4,9 +4,16 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- 부트스트랩 사용 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
         <!-- 아이콘 추가 -->
         <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-        <title>Document</title>
+        <title>Instagram</title>
         <style>
             /*색상설정*/
             :root {
@@ -20,64 +27,41 @@
             }
             /*body 전체 적용*/
             body {
-                margin: 0;
                 background-color: var(--palegray);
             }
             /*미디어쿼리*/
-            .container {
-                margin: 30px 0 30px 0;
-            }
-
-            @media screen and (min-width: 450px) {
-                .container {
-                    --fontsize: 14px;
+            @media (max-width: 1000px) {
+                .desktop {
+                    display: none;
                 }
             }
             /*상단 고정 네비게이션바*/
             .navbar {
-                overflow: hidden;
                 background-color: var(--white);
                 position: fixed;
-                top: 0;
-                height: 70px;
+                top: 0px;
+                left: 0px;
+                height: 85px;
                 width: 100%;
-                /*가운데정렬*/
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
             }
-
             /*상단 입력창 전체 정렬*/
-            form {
-                /*아이콘가운데정렬*/
+            .up_input {
+                /*돋보기 아이콘 가운데정렬*/
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                color: var(--black);
-                display: flex;
-                padding: 2px;
+                padding: 10px;
                 background-color: var(--palegray);
-                border: 1px var solid currentColor;
                 border-radius: 15px;
-                /*검색창 마진*/
-                margin: 30px 50px 30px 50px;
-            }
-
-            /*상단 입력창 감싸는 박스*/
-            form {
-                width: 300px;
+                width: 100%;
                 border-radius: 16px;
-                /*검색창 옆 여백조절*/
-                margin: 10px 50px 10px 240px;
             }
-
             /*상단 입력창 (돋보기+입력창)설정*/
             input.nosubmit {
                 /*내부 여백*/
                 width: 100%;
-                padding: 9px 4px 9px 10px;
+                padding: 0px 20px 0px 10px;
                 /*얘가투명*/
                 outline: none;
                 background: transparent;
@@ -94,45 +78,50 @@
             }
             /*돋보기 아이콘 정렬*/
             .icon {
+                margin-left: 10px;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
             }
             /*우측 아이콘바 정렬*/
             .icon-bar {
-                margin: 0 0 0 10px;
-                height: 40px;
-                width: 30%;
+                overflow: hidden;
+                height: 53px;
+                width: 36%;
+                float: right;
+                margin-right: 100px;
             }
             /*아이콘바 여백 상세설정*/
             .icon-bar a {
-                float: left;
-                width: 50px;
-                text-align: center;
+                float: right;
+                width: 38px;
+                text-align: right;
                 /*각각의 아이콘 내부 여백*/
-                padding: 12px 0px 0px 5px;
+                padding: 15px 0px 0px 0px;
                 color: var(--black);
             }
             /*좌측 이미지 정렬*/
             .img_margin {
-                margin: 0px 0px 0px 150px;
+                margin: 0px 10px 0px 100px;
             }
-            .profile_img_margin{
+            .profile_img_margin {
                 margin: 10px 0px 0px 10px;
             }
-            .big_profile_img_margin{
+            .big_profile_img_margin {
                 margin: 10px 0px 0px 4px;
             }
+
             /*사이드바 자체 속성*/
             .sidenav {
-                margin: 50px 0 0 0;
-                width: 25%;
+                background-color: var(--palegray);
+                margin: 70px 0 0 0;
+                padding: 20px 15px 10px 15px;
+                width: 400px;
                 height: 100%;
                 position: fixed;
                 z-index: 1;
-                top: 84px;
+                top: 14px;
                 left: 65%;
-                
             }
 
             /*사이드바 가로정렬*/
@@ -145,18 +134,23 @@
                 display: table;
                 clear: both;
             }
+            .column:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
             /*3분할시 가장 왼쪽*/
             .left {
-                width: 20%;
+                width: 18%;
             }
             .middle_left {
-                margin: 0px 0px 0px 5px;
-                width: 20%;
+                margin: 0px 0px 0px 1px;
+                width: 14%;
             }
             /*3분할시 가운데*/
             .middle {
                 margin: 23px 5px 0px 20px;
-                width: 60%;
+                width: 53%;
             }
             .middle_small {
                 margin: 10px 0px 0px 0px;
@@ -164,28 +158,22 @@
             }
             /*3분할시 가장 오른쪽*/
             .right {
-                margin: 30px 0px 0px 5px;
-                width: 11%;
+                margin: 30px 0px 0px 18px;
+                width: 15%;
             }
             .middle_right {
                 margin: 13px 0px 0px 20px;
-                width: 11%;
+                width: 15%;
             }
             /*왼쪽정렬, 오른쪽정렬*/
             .recommend_left {
-                margin: 18px 40px 8px 12px;
-                width: 35%;
+                margin: 18px 34px 7px 3px;
+                width: 38%;
             }
             .recommend_right {
                 margin: 18px 0px 0px 118px;
-                width: 13%;
+                width: 18%;
             }
-            /*프로필 4개 관할하는 창*/
-            .all-browsers {
-                margin: 0;
-                padding: 5px;
-            }
-            
 
             /*링크에 기본적용되는 파란줄 없애기*/
             a:link {
@@ -206,6 +194,7 @@
             .desc {
                 color: var(--gray);
                 font-size: 12px;
+                text-decoration: none;
             }
             /*글씨속성지정-모두보기*/
             .show_all {
@@ -220,6 +209,7 @@
             }
             /*글씨속성지정-footer*/
             footer {
+                text-decoration: none;
                 text-align: left;
                 padding: 3px;
                 background-color: transparent;
@@ -227,53 +217,147 @@
                 font-weight: lighter;
                 font-size: 12px;
             }
+            /*카드 id 정렬*/
+            .card_id_left {
+                margin: 0px 0px 0px 0px;
+                width: 11%;
+            }
+            /*카드 id 정렬*/
+            .card_id_middle {
+                margin: 20px 0px 0px 0px;
+                width: 50%;
+            }
+            /*카드 id 정렬*/
+            .card_id_right {
+                margin: 15px 0px 0px 190px;
+                width: 5%;
+            }
+            /*카드 icon 정렬(좌측3개)*/
+            .card_icon_left {
+                margin: 20px;
+                width: 30%;
+            }
+            /*카드 icon 정렬(우측1개)*/
+            .card_icon_right {
+                margin: 20px;
+                margin-left: 350px;
+                width: 6%;
+            }
+            /*카드 오늘의 날짜*/
+            .date {
+                color: var(--gray);
+                font-size: 10px;
+            }
+            /*카드 내용*/
+            .card_view {
+                color: var(--black);
+                font-size: 14px;
+            }
+            /*카드 내용 더보기*/
+            .card_view_more {
+                color: var(--gray);
+                font-size: 14px;
+            }
+            /*댓글게시*/
+            .card_post {
+                margin: 0px 0px 0px 0px;
+            }
+            .post_view {
+                margin: 0px 0px 0px 15px;
+            }
+            .post_post {
+                color: paleturquoise;
+                font-size: 14px;
+                width: 10%;
+                margin: 0px 0px 0px 480px;
+            }
+            /*영역*/
+            .wrap {
+                margin: 100px 0px 100px 200px;
+            }
+            .card_wrap {
+                height: auto;
+                margin: 160px 0px 150px 170px;
+            }
         </style>
     </head>
     <body>
-        <!-- 미디어 쿼리 적용단 -->
         <div class="container">
-            <!-- 네비게이션 바 -->
-            <div class="navbar">
-                <!-- 로고 -->
-                <img class="img_margin" src="static/instagram.png" />
-                <!-- 검색창 -->
-                <form class="nosubmit">
-                    ㅤㅤ
-                    <i class="fa fa-search icon"></i>ㅤ
-                    <input class="nosubmit" type="search" placeholder="검색" />
-                </form>
-                <!-- 아이콘박스 -->
-                <div class="icon-bar">
-                    <a href="#"><i class="fa fa-home fa-lg"></i></a>
-                    <i class="fa-regular fa-heart"></i>
-                    <a href="#"><i class="fa fa-plane fa-lg"></i></a>
-                    <a href="#"><i class="fa fa-plus-square fa-lg"></i></a>
-                    <a href="#"><i class="fa fa-globe fa-lg"></i></a>
-                    <a href="#"><i class="fa fa-heart fa-lg"></i></a>
-                    <a href="#"><i class="fa fa-circle fa-lg"></i></a>
+            <!-- 카드 -->
+            <div class="card_wrap">
+                <!-- 인스타 카드 기능 -->
+                <div class="card" style="width: 40rem">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="card_id_left">
+                                <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                            </div>
+                            <div class="card_id_middle">
+                                <a href="#about"><h6 class="card-title link_id">soiyo</h6></a>
+                            </div>
+                            <div class="card_id_right">
+                                <a href="#about"><i class="fa fa-ellipsis-h fa-lg link_id"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 카드 이미지 -->
+                    <img class="card-img-top" src="static/sample_card_1.png" alt="Instagram image" />
+                    <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
+                    <div class="row">
+                        <div class="card_icon_left">
+                            <a href="#about"><i class="fa fa-heart fa-lg link_id"></i></a>
+                            <a href="#about"><i class="fa fa-comments fa-lg link_id"></i></a>
+                            <a href="#about"><i class="fa fa-plane fa-lg link_id"></i></a>
+                        </div>
+                        <div class="card_icon_right">
+                            <a href="#about"><i class="fa fa-bookmark fa-lg link_id"></i></a>
+                        </div>
+                    </div>
+                    <!-- 좋아요 수, 닉네임, 내용, 댓글 -->
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="#about" class="link_id">좋아요 342,080개</a><br />
+                            <a href="#about" class="link_id">instagram </a>
+                            <span class="card_view">바다가고싶다..🌊</span>
+                            <a href="#about" class="card_view_more">더보기</a><br />
+                            <a href="#about" class="desc">댓글 1,097개 모두 보기</a><br />
+                            <a href="#about" class="date">4월 28일</a>
+                            <!-- 댓글란 -->
+                            <div class="row">
+                                <li class="list-group-item">
+                                    <div class="card_post">
+                                        <a href="#about" class="card_view"><i class="fa fa-smile fa-lg"></i></a><span class="post_view card_view_more">댓글 달기...</span><a href="#about" class="post_post">게시</a>
+                                    </div>
+                                </li>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
+            <!-- 사이드바 -->
+            <div class="wrap desktop">
+                <div class="sidenav">
+                    <!-- 내 프로필 -->
+                    <div class="row">
+                        <div class="column left">
+                            <a href="#about"><img class="big_profile_img_margin" src="static/big_profile.png" /></a>
+                        </div>
+                        <div class="column middle">
+                            <a href="#about" class="link_id">hello_my_name_is</a><br />
+                            <a class="desc">soiyo</a>
+                        </div>
+                        <div class="column right">
+                            <a href="#about" class="link_follow">전환</a>
+                        </div>
+                    </div>
 
-            <div class="sidenav">
-                <!-- 내 프로필 -->
-                <div class="browser row">
-                    <div class="column left">
-                        <a href="#about"><img class="big_profile_img_margin" src="static/big_profile.png" /></a>
+                    <div class="row">
+                        <p class="recommend recommend_left column middle">회원님을 위한 추천</p>
+                        <a href="#about" class="show_all recommend_right column middle">모두보기</a>
                     </div>
-                    <div class="column middle">
-                        <a href="#about" class="link_id">hello_world</a><br />
-                        <a class="desc">클로닝중</a>
-                    </div>
-                    <div class="column right">
-                        <a href="#about" class="link_follow">전환</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="recommend recommend_left column middle">회원님을 위한 추천</p>
-                    <a href="#about" class="show_all recommend_right column middle">모두보기</a>
-                </div>
+
                     <!-- 사용자 1 -->
-                    <div class="browser row">
+                    <div class="row">
                         <div class="column middle_left">
                             <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
                         </div>
@@ -287,7 +371,7 @@
                     </div>
 
                     <!-- 사용자 2 -->
-                    <div class="browser row">
+                    <div class="row">
                         <div class="column middle_left">
                             <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
                         </div>
@@ -301,33 +385,7 @@
                     </div>
 
                     <!-- 사용자 3 -->
-                    <div class="browser row">
-                        <div class="column middle_left">
-                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
-                        </div>
-                        <div class="column middle_small">
-                            <a href="#about" class="link_id">사용자아이디</a><br />
-                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
-                        </div>
-                        <div class="column middle_right">
-                            <a href="#about" class="link_follow">팔로우</a>
-                        </div>
-                    </div>
-                    <!-- 사용자 4 -->
-                    <div class="browser row">
-                        <div class="column middle_left">
-                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
-                        </div>
-                        <div class="column middle_small">
-                            <a href="#about" class="link_id">사용자아이디</a><br />
-                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
-                        </div>
-                        <div class="column middle_right">
-                            <a href="#about" class="link_follow">팔로우</a>
-                        </div>
-                    </div>
-                    <!-- 사용자 5 -->
-                    <div class="browser row">
+                    <div class="row">
                         <div class="column middle_left">
                             <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
                         </div>
@@ -340,54 +398,66 @@
                         </div>
                     </div>
 
-                    <footer>
-                        <a href="#about"><br><br />
+                    <!-- 사용자 4 -->
+                    <div class="row">
+                        <div class="column middle_left">
+                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                        </div>
+                        <div class="column middle_small">
+                            <a href="#about" class="link_id">사용자아이디</a><br />
+                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                        </div>
+                        <div class="column middle_right">
+                            <a href="#about" class="link_follow">팔로우</a>
+                        </div>
+                    </div>
+
+                    <!-- 사용자 5 -->
+                    <div class="row">
+                        <div class="column middle_left">
+                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                        </div>
+                        <div class="column middle_small">
+                            <a href="#about" class="link_id">사용자아이디</a><br />
+                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                        </div>
+                        <div class="column middle_right">
+                            <a href="#about" class="link_follow">팔로우</a>
+                        </div>
+                    </div>
+
+                    <footer class="page-footer amber darken-2>
+                        <a href="#about"
+                            ><br /><br />
                             소개.도움말.홍보 센터.API.채용정보<br />
                             개인정보처리방침.약관.위치.인기 계정.해시태그/언어<br /><br />
-                            @2022 INSTAGRAM FROM GAHYEON
+                            @2022 INSTAGRAM FROM SOIYO
                         </a>
                     </footer>
                 </div>
             </div>
+        </div>
+        <!-- 네비게이션 바 -->
+        <div class="navbar">
+            <!-- 로고 -->
+            <a href="#"><img class="img_margin" src="static/instagram.png" /></a>
 
-            <div class="#">
-                <h2>Instagram</h2>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
-                <p>Add media querise and background color</p>
+            <!-- 검색창 -->
+            <div class="desktop">
+                <div class="up_input nosubmit">
+                    <i class="icon fa fa-search"></i>
+                    <input class="nosubmit" type="search" placeholder="검색" />
+                </div>
+            </div>
+
+            <!-- 아이콘박스 -->
+            <div class="icon-bar">
+                <i class="fa-regular fa-heart"></i>
+                <a href="#"><i class="fa fa-heart fa-lg"></i></a>
+                <a href="#"><i class="fa fa-globe fa-lg"></i></a>
+                <a href="#"><i class="fa fa-plus-square fa-lg"></i></a>
+                <a href="#"><i class="fa fa-plane fa-lg"></i></a>
+                <a href="#"><i class="fa fa-home fa-lg"></i></a>
             </div>
         </div>
     </body>
