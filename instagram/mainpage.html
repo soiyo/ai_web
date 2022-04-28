@@ -4,8 +4,11 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- 아이콘 추가 -->
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
         <title>Document</title>
         <style>
+            /*색상설정*/
             :root {
                 --white: #ffffff;
                 --beige: #efefef;
@@ -15,14 +18,14 @@
                 --blue: #0095f6;
                 --black: #262626;
             }
+            /*body 전체 적용*/
             body {
+                margin: 0;
                 background-color: var(--palegray);
             }
+            /*미디어쿼리*/
             .container {
-                color: var(--black);
-                background-color: var(--palegray);
-                padding: 28px;
-                font-size: var(--fontsize);
+                margin: 30px 0 30px 0;
             }
 
             @media screen and (min-width: 450px) {
@@ -30,11 +33,154 @@
                     --fontsize: 14px;
                 }
             }
+            /*상단 고정 네비게이션바*/
+            .navbar {
+                overflow: hidden;
+                background-color: var(--white);
+                position: fixed;
+                top: 0;
+                height: 70px;
+                width: 100%;
+                /*가운데정렬*/
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /*상단 입력창 전체 정렬*/
+            form {
+                /*아이콘가운데정렬*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: var(--black);
+                display: flex;
+                padding: 2px;
+                background-color: var(--palegray);
+                border: 1px var solid currentColor;
+                border-radius: 15px;
+                /*검색창 마진*/
+                margin: 30px 50px 30px 50px;
+            }
+
+            /*상단 입력창 감싸는 박스*/
+            form {
+                width: 300px;
+                border-radius: 16px;
+                /*검색창 옆 여백조절*/
+                margin: 10px 50px 10px 240px;
+            }
+
+            /*상단 입력창 (돋보기+입력창)설정*/
+            input.nosubmit {
+                /*내부 여백*/
+                width: 100%;
+                padding: 9px 4px 9px 10px;
+                /*얘가투명*/
+                outline: none;
+                background: transparent;
+            }
+            /*상단 입력창 (입력창)설정*/
+            input[type='search'] {
+                border: none;
+                background: transparent;
+                font-size: 18px;
+            }
+            /*상단 입력시 글씨색*/
+            input[type='search']::placeholder {
+                color: var(--gray);
+            }
+            /*돋보기 아이콘 정렬*/
+            .icon {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            /*우측 아이콘바 정렬*/
+            .icon-bar {
+                margin: 0 0 0 10px;
+                height: 40px;
+                width: 30%;
+            }
+            /*아이콘바 여백 상세설정*/
+            .icon-bar a {
+                float: left;
+                width: 50px;
+                text-align: center;
+                /*각각의 아이콘 내부 여백*/
+                padding: 12px 0px 0px 5px;
+                color: var(--black);
+            }
+            /*좌측 이미지 정렬*/
+            .img_margin {
+                margin: 0px 0px 0px 150px;
+            }
         </style>
     </head>
     <body>
+        <!-- 미디어 쿼리 적용단 -->
         <div class="container">
+            <!-- 네비게이션 바 -->
+            <div class="navbar">
+                <!-- 로고 -->
+                <img class="img_margin" src="static/instagram.png" />
+                <!-- 검색창 -->
+                <form class="nosubmit">
+                    ㅤㅤ
+                    <i class="fa fa-search icon"></i>ㅤ
+                    <input class="nosubmit" type="search" placeholder="검색" />
+                </form>
+                <!-- 아이콘박스 -->
+                <div class="icon-bar">
+                    <a href="#"><i class="fa fa-home fa-lg"></i></a>
+                    <i class="fa-regular fa-heart"></i>
+                    <a href="#"><i class="fa fa-plane fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-envelope fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-globe fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-heart fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-circle fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="#">
             <h2>Instagram</h2>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
+            <p>Add media querise and background color</p>
             <p>Add media querise and background color</p>
         </div>
     </body>
