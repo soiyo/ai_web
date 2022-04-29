@@ -125,7 +125,7 @@
                 position: fixed;
                 z-index: 1;
                 top: 14px;
-                left: 65%;
+                left: 70%;
             }
 
             /*사이드바 가로정렬*/
@@ -289,194 +289,349 @@
             .list_grout_item{
                 margin: 20px 0 0 0;
             }
+            /*인스타카드*/
+            .card{
+                margin: 120px 0px 40px 20%;
+            }
             
         </style>
     </head>
     <body>
-        <div class="container">
-            <!-- 카드 -->
-            <div class="card_wrap">
-                <!-- 인스타 카드 기능 -->
-                <div class="card" style="width: 613px">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="card_id_left">
-                                <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
-                            </div>
-                            <div class="card_id_middle">
-                                <a href="#about"><h6 class="card-title link_id">soiyo</h6></a>
-                            </div>
-                            <div class="card_id_right">
-                                <a href="#about"><i class="fa fa-ellipsis-h fa-lg link_id"></i></a>
-                            </div>
-                        </div>
+        <!-- 인스타 카드 1 -->
+        <div class="card" style="width: 613px">
+            <div class="card-body">
+                <div class="row">
+                    <div class="card_id_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
                     </div>
-                    <!-- 카드 이미지 -->
-                    <!-- 캐러셀 자동넘김 data-interval="false" 으로 멈추기 -->
-                        <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <!-- The slideshow -->
-                            <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="static/grass.png" alt="animal_1" >
-                            </div>
-                            <div class="carousel-item">
-                                <img src="static/ocean.png" alt="animal_2" >
-                            </div>
-                            <div class="carousel-item">
-                                <img src="static/sea.png" alt="animal_3" >
-                            </div>
-                            </div>
-                            
-                            <!-- Left and right controls -->
-                            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#demo" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                            </a>
-                        </div>
-                    <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
-                    <div class="row">
-                        <div class="card_icon_left">
-                            <a href="#about"><i class="fa fa-heart-o fa-lg link_id" aria-hidden="true"></i></a>
-                            <a href="#about"><i class="fa fa-comments fa-lg link_id"></i></a>
-                            <a href="#about"><i class="fa fa-plane fa-lg link_id"></i></a>
-                        </div>
-                        <div class="card_icon_right">
-                            <a href="#about"><i class="fa fa-bookmark fa-lg link_id"></i></a>
-                        </div>
+                    <div class="card_id_middle">
+                        <a href="#about"><h6 class="card-title link_id">soiyo</h6></a>
                     </div>
-                    <!-- 좋아요 수, 닉네임, 내용, 댓글 -->
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-
-                            <a href="#about" class="link_id">좋아요 342,080개</a><br>
-
-                            <a href="#about" class="link_id">instagram </a>
-
-                            <span class="card_view">바다가고싶다..🌊</span>
-                            <input
-                                value="더보기"
-                                onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '숨기기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '더보기';}"
-                                type="button"
-                                class="card_view_more"
-                            />
-                                <div style="display: none" class="card_view">내용이 나옵니다. 랄랄랄 <br> 랄라랄 </div>
-                                <p><a href="#about" class="desc" >댓글 1,097개 모두 보기</a><br><a href="#about" class="date">4월 28일</a></p>
-                                <!-- 댓글란 -->
-                                <div class="row">
-                                    <li class="list-group-item">
-                                        <div class="card_post">
-                                            <a href="#about" class="card_view"><i class="fa fa-smile fa-lg"></i></a><span class="post_view card_view_more">댓글 달기...</span><a href="#about" class="post_post">게시</a>
-                                        </div>
-                                    </li>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="card_id_right">
+                        <a href="#about"><i class="fa fa-ellipsis-h fa-lg link_id"></i></a>
+                    </div>
                 </div>
             </div>
-            <!-- 사이드바 -->
-            <div class="wrap desktop">
-                <div class="sidenav">
-                    <!-- 내 프로필 -->
-                    <div class="row">
-                        <div class="column left">
-                            <a href="#about"><img class="big_profile_img_margin" src="static/big_profile.png" /></a>
-                        </div>
-                        <div class="column middle">
-                            <a href="#about" class="link_id">hello_my_name_is</a><br />
-                            <a class="desc">soiyo</a>
-                        </div>
-                        <div class="column right">
-                            <a href="#about" class="link_follow">전환</a>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <p class="recommend recommend_left column middle">회원님을 위한 추천</p>
-                        <a href="#about" class="show_all recommend_right column middle">모두보기</a>
-                    </div>
-
-                    <!-- 사용자 1 -->
-                    <div class="row">
-                        <div class="column middle_left">
-                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
-                        </div>
-                        <div class="column middle_small">
-                            <a href="#about" class="link_id">사용자아이디</a><br />
-                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
-                        </div>
-                        <div class="column middle_right">
-                            <a href="#about" class="link_follow">팔로우</a>
-                        </div>
-                    </div>
-
-                    <!-- 사용자 2 -->
-                    <div class="row">
-                        <div class="column middle_left">
-                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
-                        </div>
-                        <div class="column middle_small">
-                            <a href="#about" class="link_id">사용자아이디</a><br />
-                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
-                        </div>
-                        <div class="column middle_right">
-                            <a href="#about" class="link_follow">팔로우</a>
-                        </div>
-                    </div>
-
-                    <!-- 사용자 3 -->
-                    <div class="row">
-                        <div class="column middle_left">
-                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
-                        </div>
-                        <div class="column middle_small">
-                            <a href="#about" class="link_id">사용자아이디</a><br />
-                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
-                        </div>
-                        <div class="column middle_right">
-                            <a href="#about" class="link_follow">팔로우</a>
-                        </div>
-                    </div>
-
-                    <!-- 사용자 4 -->
-                    <div class="row">
-                        <div class="column middle_left">
-                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
-                        </div>
-                        <div class="column middle_small">
-                            <a href="#about" class="link_id">사용자아이디</a><br />
-                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
-                        </div>
-                        <div class="column middle_right">
-                            <a href="#about" class="link_follow">팔로우</a>
-                        </div>
-                    </div>
-
-                    <!-- 사용자 5 -->
-                    <div class="row">
-                        <div class="column middle_left">
-                            <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
-                        </div>
-                        <div class="column middle_small">
-                            <a href="#about" class="link_id">사용자아이디</a><br />
-                            <a class="desc">soyo님 외 1명이 팔로우합니다</a>
-                        </div>
-                        <div class="column middle_right">
-                            <a href="#about" class="link_follow">팔로우</a>
-                        </div>
-                    </div>
-
-                    <footer class="page-footer amber darken-2>
-                        <a href="#about"
-                            ><br /><br />
-                            소개.도움말.홍보 센터.API.채용정보<br />
-                            개인정보처리방침.약관.위치.인기 계정.해시태그/언어<br /><br />
-                            @2022 INSTAGRAM FROM SOIYO
-                        </a>
-                    </footer>
+            <!-- 캐러셀 자동넘김 data-interval="false" 으로 멈추기 -->
+            <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="static/grass.png" alt="animal_1" >
                 </div>
+                <div class="carousel-item">
+                    <img src="static/ocean.png" alt="animal_2" >
+                </div>
+                <div class="carousel-item">
+                    <img src="static/sea.png" alt="animal_3" >
+                </div>
+                </div>
+                
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+            <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
+            <div class="row">
+                <div class="card_icon_left">
+                    <a href="#about"><i class="fa fa-heart-o fa-lg link_id" aria-hidden="true"></i></a>
+                    <a href="#about"><i class="fa fa-comments fa-lg link_id"></i></a>
+                    <a href="#about"><i class="fa fa-plane fa-lg link_id"></i></a>
+                </div>
+                <div class="card_icon_right">
+                    <a href="#about"><i class="fa fa-bookmark fa-lg link_id"></i></a>
+                </div>
+            </div>
+            <!-- 좋아요 수, 닉네임, 내용, 댓글 -->
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+
+                    <a href="#about" class="link_id">좋아요 342,080개</a><br>
+
+                    <a href="#about" class="link_id">instagram </a>
+
+                    <span class="card_view">바다가고싶다..🌊</span>
+                    <input
+                        value="더보기"
+                        onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '숨기기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '더보기';}"
+                        type="button"
+                        class="card_view_more"
+                    />
+                        <div style="display: none" class="card_view">내용이 나옵니다. 랄랄랄 <br> 랄라랄 </div>
+                        <p><a href="#about" class="desc" >댓글 1,097개 모두 보기</a><br><a href="#about" class="date">4월 28일</a></p>
+                        <!-- 댓글란 -->
+                        <div class="row">
+                            <li class="list-group-item">
+                                <div class="card_post">
+                                    <a href="#about" class="card_view"><i class="fa fa-smile fa-lg"></i></a><span class="post_view card_view_more">댓글 달기...</span><a href="#about" class="post_post">게시</a>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 인스타 카드 2 -->
+        <div class="card" style="width: 613px">
+            <div class="card-body">
+                <div class="row">
+                    <div class="card_id_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="card_id_middle">
+                        <a href="#about"><h6 class="card-title link_id">soiyo</h6></a>
+                    </div>
+                    <div class="card_id_right">
+                        <a href="#about"><i class="fa fa-ellipsis-h fa-lg link_id"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 캐러셀 자동넘김 data-interval="false" 으로 멈추기 -->
+            <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="static/grass.png" alt="animal_1" >
+                </div>
+                <div class="carousel-item">
+                    <img src="static/ocean.png" alt="animal_2" >
+                </div>
+                <div class="carousel-item">
+                    <img src="static/sea.png" alt="animal_3" >
+                </div>
+                </div>
+                
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+            <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
+            <div class="row">
+                <div class="card_icon_left">
+                    <a href="#about"><i class="fa fa-heart-o fa-lg link_id" aria-hidden="true"></i></a>
+                    <a href="#about"><i class="fa fa-comments fa-lg link_id"></i></a>
+                    <a href="#about"><i class="fa fa-plane fa-lg link_id"></i></a>
+                </div>
+                <div class="card_icon_right">
+                    <a href="#about"><i class="fa fa-bookmark fa-lg link_id"></i></a>
+                </div>
+            </div>
+            <!-- 좋아요 수, 닉네임, 내용, 댓글 -->
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+
+                    <a href="#about" class="link_id">좋아요 342,080개</a><br>
+
+                    <a href="#about" class="link_id">instagram </a>
+
+                    <span class="card_view">바다가고싶다..🌊</span>
+                    <input
+                        value="더보기"
+                        onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '숨기기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '더보기';}"
+                        type="button"
+                        class="card_view_more"
+                    />
+                        <div style="display: none" class="card_view">내용이 나옵니다. 랄랄랄 <br> 랄라랄 </div>
+                        <p><a href="#about" class="desc" >댓글 1,097개 모두 보기</a><br><a href="#about" class="date">4월 28일</a></p>
+                        <!-- 댓글란 -->
+                        <div class="row">
+                            <li class="list-group-item">
+                                <div class="card_post">
+                                    <a href="#about" class="card_view"><i class="fa fa-smile fa-lg"></i></a><span class="post_view card_view_more">댓글 달기...</span><a href="#about" class="post_post">게시</a>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 인스타 카드 3 -->
+        <div class="card" style="width: 613px">
+            <div class="card-body">
+                <div class="row">
+                    <div class="card_id_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="card_id_middle">
+                        <a href="#about"><h6 class="card-title link_id">soiyo</h6></a>
+                    </div>
+                    <div class="card_id_right">
+                        <a href="#about"><i class="fa fa-ellipsis-h fa-lg link_id"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 캐러셀 자동넘김 data-interval="false" 으로 멈추기 -->
+            <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="static/grass.png" alt="animal_1" >
+                </div>
+                <div class="carousel-item">
+                    <img src="static/ocean.png" alt="animal_2" >
+                </div>
+                <div class="carousel-item">
+                    <img src="static/sea.png" alt="animal_3" >
+                </div>
+                </div>
+                
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+            <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
+            <div class="row">
+                <div class="card_icon_left">
+                    <a href="#about"><i class="fa fa-heart-o fa-lg link_id" aria-hidden="true"></i></a>
+                    <a href="#about"><i class="fa fa-comments fa-lg link_id"></i></a>
+                    <a href="#about"><i class="fa fa-plane fa-lg link_id"></i></a>
+                </div>
+                <div class="card_icon_right">
+                    <a href="#about"><i class="fa fa-bookmark fa-lg link_id"></i></a>
+                </div>
+            </div>
+            <!-- 좋아요 수, 닉네임, 내용, 댓글 -->
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+
+                    <a href="#about" class="link_id">좋아요 342,080개</a><br>
+
+                    <a href="#about" class="link_id">instagram </a>
+
+                    <span class="card_view">바다가고싶다..🌊</span>
+                    <input
+                        value="더보기"
+                        onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '숨기기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '더보기';}"
+                        type="button"
+                        class="card_view_more"
+                    />
+                        <div style="display: none" class="card_view">내용이 나옵니다. 랄랄랄 <br> 랄라랄 </div>
+                        <p><a href="#about" class="desc" >댓글 1,097개 모두 보기</a><br><a href="#about" class="date">4월 28일</a></p>
+                        <!-- 댓글란 -->
+                        <div class="row">
+                            <li class="list-group-item">
+                                <div class="card_post">
+                                    <a href="#about" class="card_view"><i class="fa fa-smile fa-lg"></i></a><span class="post_view card_view_more">댓글 달기...</span><a href="#about" class="post_post">게시</a>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="wrap desktop">
+            <div class="sidenav">
+                <!-- 내 프로필 -->
+                <div class="row">
+                    <div class="column left">
+                        <a href="#about"><img class="big_profile_img_margin" src="static/big_profile.png" /></a>
+                    </div>
+                    <div class="column middle">
+                        <a href="#about" class="link_id">hello_my_name_is</a><br />
+                        <a class="desc">soiyo</a>
+                    </div>
+                    <div class="column right">
+                        <a href="#about" class="link_follow">전환</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p class="recommend recommend_left column middle">회원님을 위한 추천</p>
+                    <a href="#about" class="show_all recommend_right column middle">모두보기</a>
+                </div>
+
+                <!-- 사용자 1 -->
+                <div class="row">
+                    <div class="column middle_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="column middle_small">
+                        <a href="#about" class="link_id">사용자아이디</a><br />
+                        <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                    </div>
+                    <div class="column middle_right">
+                        <a href="#about" class="link_follow">팔로우</a>
+                    </div>
+                </div>
+
+                <!-- 사용자 2 -->
+                <div class="row">
+                    <div class="column middle_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="column middle_small">
+                        <a href="#about" class="link_id">사용자아이디</a><br />
+                        <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                    </div>
+                    <div class="column middle_right">
+                        <a href="#about" class="link_follow">팔로우</a>
+                    </div>
+                </div>
+
+                <!-- 사용자 3 -->
+                <div class="row">
+                    <div class="column middle_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="column middle_small">
+                        <a href="#about" class="link_id">사용자아이디</a><br />
+                        <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                    </div>
+                    <div class="column middle_right">
+                        <a href="#about" class="link_follow">팔로우</a>
+                    </div>
+                </div>
+
+                <!-- 사용자 4 -->
+                <div class="row">
+                    <div class="column middle_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="column middle_small">
+                        <a href="#about" class="link_id">사용자아이디</a><br />
+                        <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                    </div>
+                    <div class="column middle_right">
+                        <a href="#about" class="link_follow">팔로우</a>
+                    </div>
+                </div>
+
+                <!-- 사용자 5 -->
+                <div class="row">
+                    <div class="column middle_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="column middle_small">
+                        <a href="#about" class="link_id">사용자아이디</a><br />
+                        <a class="desc">soyo님 외 1명이 팔로우합니다</a>
+                    </div>
+                    <div class="column middle_right">
+                        <a href="#about" class="link_follow">팔로우</a>
+                    </div>
+                </div>
+
+                <footer class="page-footer amber darken-2>
+                    <a href="#about"
+                        ><br /><br />
+                        소개.도움말.홍보 센터.API.채용정보<br />
+                        개인정보처리방침.약관.위치.인기 계정.해시태그/언어<br /><br />
+                        @2022 INSTAGRAM FROM SOIYO
+                    </a>
+                </footer>
             </div>
         </div>
         <!-- 네비게이션 바 -->
@@ -501,7 +656,5 @@
                 <a href="#"><i class="fa fa-home fa-lg"></i></a>
             </div>
         </div>
-
-        
     </body>
 </html>
