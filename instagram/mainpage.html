@@ -11,6 +11,10 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- 아이콘 추가 -->
         <script src="https://kit.fontawesome.com/f051361119.js" crossorigin="anonymous"></script>
         <title>Instagram</title>
@@ -272,7 +276,7 @@
                 color: paleturquoise;
                 font-size: 14px;
                 width: 10%;
-                margin: 0px 0px 0px 480px;
+                margin: 0px 0px 0px 440px;
             }
             /*영역*/
             .wrap {
@@ -282,6 +286,9 @@
                 height: auto;
                 margin: 160px 0px 150px 170px;
             }
+            .list_grout_item{
+                margin: 20px 0 0 0;
+            }
             
         </style>
     </head>
@@ -290,7 +297,7 @@
             <!-- 카드 -->
             <div class="card_wrap">
                 <!-- 인스타 카드 기능 -->
-                <div class="card" style="width: 40rem">
+                <div class="card" style="width: 613px">
                     <div class="card-body">
                         <div class="row">
                             <div class="card_id_left">
@@ -305,7 +312,29 @@
                         </div>
                     </div>
                     <!-- 카드 이미지 -->
-                    <img class="card-img-top" src="static/sample_card_1.png" alt="Instagram image" />
+                    <!-- 캐러셀 자동넘김 data-interval="false" 으로 멈추기 -->
+                        <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="static/grass.png" alt="animal_1" >
+                            </div>
+                            <div class="carousel-item">
+                                <img src="static/ocean.png" alt="animal_2" >
+                            </div>
+                            <div class="carousel-item">
+                                <img src="static/sea.png" alt="animal_3" >
+                            </div>
+                            </div>
+                            
+                            <!-- Left and right controls -->
+                            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
                     <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
                     <div class="row">
                         <div class="card_icon_left">
@@ -472,5 +501,7 @@
                 <a href="#"><i class="fa fa-home fa-lg"></i></a>
             </div>
         </div>
+
+        
     </body>
 </html>
