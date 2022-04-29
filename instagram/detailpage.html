@@ -39,6 +39,11 @@
                     display: none;
                 }
             }
+            @media (max-width: 600px) {
+                .hidemobile {
+                    display: none;
+                }
+            }
             /*상단 고정 네비게이션바*/
             .navbar {
                 background-color: var(--white);
@@ -184,7 +189,7 @@
             }
             .table{
                 margin-left: 100px;
-                width: 60%;
+                width: 90%;
                 
             }
             .myimg_margin{
@@ -198,6 +203,19 @@
                 justify-content: center;
                 align-items: center;
                 max-width: 100%;
+            }
+            .grid-container {
+                max-width: 1000px;
+                display: grid;
+                column-gap: 70px;
+                row-gap: 20px;
+                grid-template-columns: 250px 250px 250px;
+                padding: 10px;
+            }
+
+            .grid-item {
+                width: 200px;
+                
             }
             /*글씨속성지정-footer*/
             footer {
@@ -247,13 +265,14 @@
                     </div>
                     <!-- 이름,설명 -->
                     <div class="row right">
-                        <div clas="row">
+                        <div>
                             <a href="#about" class="myid">soiyo</a>ㅤㅤ
                             <!-- 프로필 편집버튼과 아이콘 -->
                             <button class=" myid_3 myprofile_edit_button">프로필 편집</button>ㅤㅤ
                             <i class="fa-solid fa-cog"></i>
                         </div>
-                        <div clas="row">
+                        <div
+                        <div class="hidemobile"> 
                             <span>게시물 <b>4</b></span>ㅤㅤ
                             <a href="#about" class="myid_1">팔로워 <b>5</b></a>ㅤㅤ
                             <a href="#about" class="myid_1">팔로우 <b>7</b></a>
@@ -274,7 +293,17 @@
                         </tbody>
                     </table>
                 </div>
-
+                <div class="grid-container">
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                    <div class="grid-item"><a href="#about"><img class="img_margin" src="static/sample_image_1.png" /></a></div>
+                </div>
                 <footer class="page-footer amber darken-2>
                     <a href="#about"
                         ><br /><br />
