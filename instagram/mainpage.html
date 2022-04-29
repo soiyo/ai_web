@@ -12,7 +12,7 @@
             crossorigin="anonymous"
         />
         <!-- 아이콘 추가 -->
-        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <script src="https://kit.fontawesome.com/f051361119.js" crossorigin="anonymous"></script>
         <title>Instagram</title>
         <style>
             /*색상설정*/
@@ -195,6 +195,7 @@
                 color: var(--gray);
                 font-size: 12px;
                 text-decoration: none;
+                width: 200px;
             }
             /*글씨속성지정-모두보기*/
             .show_all {
@@ -255,6 +256,8 @@
             }
             /*카드 내용 더보기*/
             .card_view_more {
+                border: none;
+                background-color: transparent;
                 color: var(--gray);
                 font-size: 14px;
             }
@@ -279,6 +282,7 @@
                 height: auto;
                 margin: 160px 0px 150px 170px;
             }
+            
         </style>
     </head>
     <body>
@@ -305,7 +309,7 @@
                     <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
                     <div class="row">
                         <div class="card_icon_left">
-                            <a href="#about"><i class="fa fa-heart fa-lg link_id"></i></a>
+                            <a href="#about"><i class="fa fa-heart-o fa-lg link_id" aria-hidden="true"></i></a>
                             <a href="#about"><i class="fa fa-comments fa-lg link_id"></i></a>
                             <a href="#about"><i class="fa fa-plane fa-lg link_id"></i></a>
                         </div>
@@ -316,19 +320,28 @@
                     <!-- 좋아요 수, 닉네임, 내용, 댓글 -->
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <a href="#about" class="link_id">좋아요 342,080개</a><br />
+
+                            <a href="#about" class="link_id">좋아요 342,080개</a><br>
+
                             <a href="#about" class="link_id">instagram </a>
+
                             <span class="card_view">바다가고싶다..🌊</span>
-                            <a href="#about" class="card_view_more">더보기</a><br />
-                            <a href="#about" class="desc">댓글 1,097개 모두 보기</a><br />
-                            <a href="#about" class="date">4월 28일</a>
-                            <!-- 댓글란 -->
-                            <div class="row">
-                                <li class="list-group-item">
-                                    <div class="card_post">
-                                        <a href="#about" class="card_view"><i class="fa fa-smile fa-lg"></i></a><span class="post_view card_view_more">댓글 달기...</span><a href="#about" class="post_post">게시</a>
-                                    </div>
-                                </li>
+                            <input
+                                value="더보기"
+                                onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '숨기기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '더보기';}"
+                                type="button"
+                                class="card_view_more"
+                            />
+                                <div style="display: none" class="card_view">내용이 나옵니다. 랄랄랄 <br> 랄라랄 </div>
+                                <p><a href="#about" class="desc" >댓글 1,097개 모두 보기</a><br><a href="#about" class="date">4월 28일</a></p>
+                                <!-- 댓글란 -->
+                                <div class="row">
+                                    <li class="list-group-item">
+                                        <div class="card_post">
+                                            <a href="#about" class="card_view"><i class="fa fa-smile fa-lg"></i></a><span class="post_view card_view_more">댓글 달기...</span><a href="#about" class="post_post">게시</a>
+                                        </div>
+                                    </li>
+                                </div>
                             </div>
                         </li>
                     </ul>
