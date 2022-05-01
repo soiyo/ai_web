@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            /* Variable declarations */
+            :root {
+                --blue: #1e90ff;
+                --white: #ffffff;
+            }
+
+            .container {
+                --fontsize: 25px;
+            }
+
+            /* Styles */
+            body {
+                background-color: var(--blue);
+            }
+
+            h2 {
+                border-bottom: 2px solid var(--blue);
+            }
+
+            .container {
+                color: var(--blue);
+                background-color: var(--white);
+                padding: 15px;
+                font-size: var(--fontsize);
+            }
+
+            @media screen and (min-width: 450px) {
+                .container {
+                    --fontsize: 50px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Using Variables in Media Queries</h1>
+
+        <div class="container">
+            <h2>Lorem Ipsum</h2>
+            <p>
+                When the browser's width is less than 450px, the font-size of this div is 25px. When it is 450px or wider, set the --fontsize variable value to 50px. Resize the browser window to see
+                the effect.
+            </p>
+        </div>
+    </body>
+</html>
