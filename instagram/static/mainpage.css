@@ -1,0 +1,316 @@
+:root {
+    --red: red;
+    --white: #ffffff;
+    --beige: #efefef;
+    --pale-gray: #fafafa;
+    --light-gray: #d3d3d3;
+    --gray: #8e8e8e;
+    --dark-gray: #262626;
+    --blue: #0095f6;
+    --black: #262626;
+    --big-text: 14px;
+    --middle-text: 12px;
+    --small-text: 10px;
+    --bolder-text: 700;
+}
+/*상단바 border*/
+.navbar {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 85px;
+    border-bottom: 1px solid var(--light-gray);
+    justify-content: space-evenly;
+    z-index: 99;
+}
+
+/*상단바 메뉴정렬*/
+.top-bar {
+    display: flex;
+}
+
+/*상단바 인스타그램이미지정렬*/
+.top-logo {
+    display: flex;
+    margin: 0px 200px 0px 0px;
+    cursor: pointer;
+}
+.top-search-div {
+    outline: none;
+}
+.top-search {
+    display: flex;
+    width: 350px;
+    margin-right: 10px;
+    background-color: var(--pale-gray);
+    border-radius: 15px;
+}
+
+/*아이콘바 정렬 부트스트랩*/
+.top-icon {
+    display: flex;
+    margin-left: 100px;
+}
+
+/*상단바 개개 아이콘 부트스트랩 및 포인터*/
+.material {
+    display: flex;
+    margin: 10px 0px 0px 13px;
+    cursor: pointer;
+}
+
+/*피드위 이미지 정렬*/
+.top-profile-img {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    border-radius: 70%;
+}
+
+/*카드@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+/*card-up-username 정렬*/
+.card-up-picture {
+    width: 10%;
+    margin-left: 10px;
+}
+/*카드 id 정렬*/
+.card-up-username {
+    width: 20%;
+    margin-top: 8px;
+    margin-right: 370px;
+}
+.card-up-modal {
+    width: 1%;
+    margin-top: 5px;
+    margin-left: 23px;
+}
+/*카드 icon 정렬(좌측3개)*/
+.card-icon {
+    width: 1%;
+    margin: 10px 10px 10px 30px;
+}
+/*글씨속성지정-id*/
+.card-bigtext {
+    color: var(--black);
+    font-size: var(--big-text);
+    font-weight: var(--bolder-text);
+}
+/*카드 icon 정렬(우측1개)*/
+.card-icon-right {
+    width: 1%;
+    margin: 10px 10px 10px 470px;
+}
+
+/*카드 내용*/
+.card-view {
+    color: var(--black);
+    font-size: var(--big-text);
+}
+/*카드 내용 더보기*/
+.card-view-more {
+    width: 100px;
+    color: var(--gray);
+    font-size: var(--big-text);
+}
+
+.card-view-more-button {
+    border: none;
+    background-color: transparent;
+    color: var(--gray);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/*글씨속성지정-설명*/
+.desc {
+    display: flex;
+    color: var(--gray);
+    font-size: var(--middle-text);
+}
+/*카드 오늘의 날짜*/
+.date {
+    color: var(--gray);
+    font-size: var(--small-text);
+}
+.card-bottom {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    border: var(--none);
+}
+.bottom-icon {
+    width: 8%;
+}
+.bottom-input {
+    border: none;
+    width: 80%;
+    height: 30px;
+    margin: 0px 30px 0px 20px;
+}
+.post-button {
+    justify-content: var(--center);
+    align-content: var(--center);
+    width: 40px;
+    height: 30px;
+    color: var(--blue);
+    background-color: transparent;
+    text-align: var(--center);
+    border: none;
+}
+/*링크에 기본적용되는 파란줄 없애기*/
+a:link {
+    text-decoration: var(--none);
+}
+a:hover {
+    color: var(--black);
+}
+/*사이드@@@@@@@@@@@@@@@@@@2*/
+/*우측피드 정렬*/
+.side {
+    position: fixed;
+    width: 350px;
+    height: 1000px;
+    padding-top: 20px;
+    left: 61%;
+}
+/*피드이름 정렬*/
+.side-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+/*내 프로필사진 정렬*/
+.side-big-profilebox {
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
+    overflow: hidden;
+}
+/*피드위 이미지 정렬*/
+.side-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+/*이름 정렬*/
+.side-name-text {
+    display: flex;
+    flex-direction: column;
+}
+/*팔로우/전환텍스트 설정*/
+.side-follow-text {
+    display: block;
+    margin-top: 20px;
+    color: var(--blue);
+    font-size: var(--big-text);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*회원님을 위한 추천 설정*/
+.side-recommendbox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+    padding: 5px;
+    font-size: var(--big-text);
+    font-weight: bold;
+}
+/*피드내용이름 정렬*/
+.side-small-profile-namebox {
+    margin: 5px 130px 0px 0px;
+    padding: 0px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*피드위 프로필박스 정렬*/
+.side-small-profile-imgbox {
+    width: 40px;
+    height: 40px;
+    border-radius: 70%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/*이름 밑 내용 정렬*/
+.side-small-profile-desc {
+    width: 190px;
+    padding: 0px 10px;
+    font-size: var(--middle-text);
+    font-weight: bold;
+    color: var(--gray);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*피드 더보기버튼 설정*/
+.side-footer {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 80px 0px 5px;
+    color: var(--light-gray);
+    font-size: var(--middle-text);
+    font-weight: bold;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    margin-right: 290px;
+    padding-top: 100px;
+}
+.wrap-card {
+    display: flex;
+    width: 700px;
+    flex-direction: column;
+    margin: 30px 20px 0px 0px;
+}
+.wrap-side {
+    position: fixed;
+    width: 350px;
+    height: 1000px;
+    padding-top: 20px;
+    left: 61%;
+}
+
+/*미디어쿼리 설정*/
+@media screen and (max-width: 1500px) {
+    .wrap-side {
+        display: none;
+    }
+
+    .wrap-card {
+        margin-left: 360px;
+    }
+}
+input:focus {
+    outline: none;
+}
+button {
+    outline: none;
+}
+.modal-dialog {
+    background-color: transparent;
+}
+.modal-body {
+    padding-top: 300px;
+}
+.modal-button {
+    width: 410px;
+    height: 50px;
+    border: 1px solid var(--light-gray);
+}
+.modal-button-warning {
+    width: 410px;
+    height: 50px;
+    border: 1px solid var(--light-grays);
+    color: var(--red);
+    font-weight: var(--bolder-text);
+}
