@@ -288,6 +288,11 @@ a:hover {
 
     .wrap-card {
         margin-left: 360px;
+        align-items: center;
+        justify-content: center;
+    }
+    .top-search {
+        display: none;
     }
 }
 input:focus {
@@ -313,14 +318,4 @@ button {
     border: 1px solid var(--light-grays);
     color: var(--red);
     font-weight: var(--bolder-text);
-}
-/*피드 이미지크기 설정*/
-.carousel-item {
-    height: 600px;
-    width: 700px;
-}
-/*피드이미지 크기 */
-.feed-img {
-    width: 100%;
-    height: 100%;
 }

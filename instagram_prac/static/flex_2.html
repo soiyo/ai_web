@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .top {
+                flex-direction: row;
+                display: flex;
+                justify-content: space-evenly;
+                background-color: aqua;
+            }
+            .middle {
+                flex-direction: row;
+                display: flex;
+                justify-content: center;
+                background-color: blue;
+            }
+            .middle-left {
+                flex-direction: column;
+                display: flex;
+                justify-content: center;
+                background-color: yellowgreen;
+            }
+            .middle-right {
+                flex-direction: column;
+                display: flex;
+                justify-content: center;
+                background-color: yellow;
+            }
+            .middle-right-firstbox {
+                flex-direction: row;
+                display: flex;
+                background-color: rebeccapurple;
+            }
+            .middle-right-secondbox {
+                flex-direction: row;
+                display: flex;
+                justify-content: space-between;
+                background-color: darkgreen;
+            }
+            .middle-right-thirdbox {
+                flex-direction: row;
+                display: flex;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div class="item">인스타그램 로고</div>
+            <div class="item">검색창</div>
+            <div class="item">아이콘, 프로필바</div>
+        </div>
+        <div class="middle">
+            <div class="middle-left">인스타그램 카드</div>
+
+            <div class="item">
+                <div class="middle-right">
+                    프로필
+                    <div class="middle-right-firstbox">사진</div>
+                    <div class="middle-right-firstbox">사진설명<br />2줄</div>
+                    <div class="middle-right-firstbox">전환</div>
+                </div>
+
+                <div class="middle-right">
+                    <div class="middle-right-secondbox">팔로우할목록</div>
+                    <div class="middle-right-secondbox">팔로우할목록</div>
+                    <div class="middle-right-thirdbox">사진</div>
+                    <div class="middle-right-thirdbox">사진설명<br />2줄</div>
+                    <div class="middle-right-thirdbox">전환</div>
+                </div>
+
+                <div class="middle-right">푸터</div>
+            </div>
+        </div>
+    </body>
+</html>

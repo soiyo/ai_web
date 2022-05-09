@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .top {
+                height: 85px;
+                width: 100%;
+                align-items: center;
+                position: fixed;
+                flex-direction: row;
+                display: flex;
+                justify-content: space-evenly;
+                background-color: aqua;
+            }
+            .middle {
+                flex-direction: row;
+                display: flex;
+                justify-content: center;
+                background-color: blue;
+                padding-bottom: 20px;
+            }
+            .middle-left {
+                margin-top: 100px;
+                flex-direction: column;
+                display: flex;
+                justify-content: center;
+                background-color: yellowgreen;
+            }
+            /*사이드바*/
+            .side-bar {
+                margin-top: 100px;
+                margin-left: 20px;
+            }
+            .middle-right {
+                display: flex;
+                justify-content: space-evenly;
+                height: 100px;
+                margin-bottom: 10px;
+                background-color: yellow;
+            }
+            .middle-right-firstbox {
+                width: 30%;
+                background-color: rebeccapurple;
+            }
+            .middle-right-secondbox {
+                flex-direction: row;
+                width: 36%;
+                display: flex;
+                justify-content: space-between;
+                background-color: darkgreen;
+            }
+            .middle-right-thirdbox {
+                width: 20%;
+                flex-direction: row;
+                display: flex;
+                justify-content: space-between;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 메뉴바 -->
+        <div class="top">
+            <div class="item">인스타그램 로고</div>
+            <div class="item">검색창</div>
+            <div class="item">아이콘, 프로필바</div>
+        </div>
+        <!-- 메뉴바 아래 -->
+        <div class="middle">
+            <div class="middle-left">인스타그램 카드</div>
+            <!-- 사이드바 -->
+            <div class="side-bar">
+                <div class="middle-right">
+                    <div class="middle-right-firstbox">사진</div>
+                    <div class="middle-right-firstbox">사진설명<br />2줄</div>
+                    <div class="middle-right-firstbox">전환</div>
+                </div>
+
+                <div class="middle-right">
+                    <div class="middle-right-secondbox">팔로우할목록</div>
+                    <div class="middle-right-secondbox">팔로우할목록</div>
+                </div>
+
+                <div class="middle-right">
+                    <div class="middle-right-thirdbox">사진</div>
+                    <div class="middle-right-thirdbox">사진설명<br />2줄</div>
+                    <div class="middle-right-thirdbox">전환</div>
+                </div>
+
+                <div class="middle-right">푸터</div>
+            </div>
+        </div>
+    </body>
+</html>
