@@ -314,3 +314,13 @@ button {
     color: var(--red);
     font-weight: var(--bolder-text);
 }
+/*피드 이미지크기 설정*/
+.carousel-item {
+    height: 600px;
+    width: 700px;
+}
+/*피드이미지 크기 */
+.feed-img {
+    width: 100%;
+    height: 100%;
+}
