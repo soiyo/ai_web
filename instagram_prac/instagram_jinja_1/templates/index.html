@@ -1,0 +1,15 @@
+{% comment %} 한 유저가 쓴 데이터 그대로 가져오기 {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        {% for fee in feed %} {% if fee.id == "1010" %}
+        <p>{{fee.pw}}</p>
+        {% endif %} {% endfor %}
+    </body>
+</html>

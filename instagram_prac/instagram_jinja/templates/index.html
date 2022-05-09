@@ -1,0 +1,16 @@
+{% comment %} 모든 피드 데이터 가져오기 {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        {% for fee in feed %} {% comment %} app.py에서 feed라는 변수로 모든 데이터 리스트형태로 가져옴 {% endcomment %}
+        <p>{{fee.id}}</p>
+        <p>{{fee.nick}}</p>
+        {% endfor %}
+    </body>
+</html>
