@@ -1,10 +1,10 @@
 :root {
     --red: red;
     --white: #ffffff;
-    --beige: #efefef;
-    --pale-gray: #fafafa;
-    --light-gray: #d3d3d3;
-    --gray: #8e8e8e;
+    --beige: #fff5ee;
+    --pale-gray: #f5f5f5;
+    --light-gray: #c4c4c4;
+    --gray: #898989;
     --dark-gray: #262626;
     --blue: #0095f6;
     --black: #262626;
@@ -15,30 +15,21 @@
 }
 
 .wrap-top-bar {
-    position: fixed;
-    width: 100%;
-    height: 85px;
-    border-bottom: 1px solid var(--light-gray);
-    background-color: var(--light-gray);
-    z-index: 99;
-}
-/*상단바 border*/
-.navbar {
-    position: fixed;
     display: flex;
-    width: 100%;
-    height: 85px;
-    border-bottom: 1px solid var(--light-gray);
-    justify-content: space-evenly;
-    z-index: 99;
 }
 
 /*상단바 메뉴정렬*/
 .top-bar {
-    position: fixed;
     display: flex;
-    margin-left: 500px;
-    z-index: 99;
+    justify-content: center;
+    padding-top: 20px;
+
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    border-bottom: 1px solid var(--pale-gray);
+    background-color: var(--white);
+    z-index: 101;
 }
 
 /*상단바 인스타그램이미지정렬*/
@@ -53,9 +44,9 @@
 .top-search {
     display: flex;
     width: 350px;
-    margin-right: 10px;
+    height: 50px;
     padding: 15px;
-    background-color: var(--white);
+    background-color: var(--pale-gray);
     border: none;
     border-radius: 15px;
 }
@@ -69,7 +60,7 @@
 /*상단바 개개 아이콘 부트스트랩 및 포인터*/
 .material {
     display: flex;
-    margin: 10px 0px 0px 13px;
+    margin: 10px 0px 0px 10px;
     cursor: pointer;
 }
 
@@ -186,7 +177,6 @@ a:hover {
     width: 350px;
     height: 1000px;
     padding-top: 20px;
-    left: 61%;
 }
 /*피드이름 정렬*/
 .side-item {
@@ -276,19 +266,21 @@ a:hover {
 
 .wrap {
     display: flex;
+    align-items: center;
     flex-direction: column;
-    margin-right: 290px;
 }
 .wrap-card {
     display: flex;
-    width: 700px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    margin: 130px 20px 0px 490px;
+    margin: 130px 0px 0px 0px;
 }
 .wrap-side {
     position: fixed;
-    width: 350px;
-    height: 1000px;
+    width: 100%;
+    height: auto;
     padding-top: 150px;
 }
 
@@ -299,12 +291,15 @@ a:hover {
     }
 
     .wrap-card {
-        margin-left: 360px;
         align-items: center;
         justify-content: center;
     }
     .top-search {
         display: none;
+    }
+    .container {
+        align-items: center;
+        justify-content: center;
     }
 }
 input:focus {
@@ -317,7 +312,7 @@ button {
     background-color: transparent;
 }
 .modal-body {
-    margin-top: 300px;
+    margin-top: 60%;
 }
 .modal-button {
     width: 410px;
@@ -341,4 +336,12 @@ button {
 .feed-img {
     width: 100%;
     height: 100%;
+}
+
+.container {
+    display: flex;
+}
+
+.item {
+    margin-left: 50px;
 }
