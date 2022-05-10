@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <title>Document</title>
+        <style>
+            :root {
+                --white: #ffffff;
+                --beige: #efefef;
+                --pale-gray: #fafafa;
+                --gray: #8e8e8e;
+                --dark-gray: #262626;
+                --blue: #0095f6;
+                --black: #262626;
+                --big-text: 14px;
+                --middle-text: 12px;
+                --small-text: 10px;
+                --bolder-text: bolder;
+                --flex: flex;
+                --none: none;
+                --center: center;
+            }
+            .card-top{
+                display: var(--flex);
+            }
+            /*card-up-username 정렬*/
+            .card-up-picture {
+                display: var(--flex);
+                width: 10%;
+            }
+            /*카드 id 정렬*/
+            .card-up-username {
+                display: var(--flex);
+                width:20%;
+                margin-top: 8px;
+                margin-right: 370px;
+            }
+            .card-up-modal {
+                display: var(--flex);
+                width: 1%;
+                margin-top: 5px;
+                margin-left: 23px;
+            }
+            /*카드 icon 정렬(좌측3개)*/
+            .card-icon {
+                display: var(--flex);
+                width: 1%;
+                margin:10px;
+            }
+            /*글씨속성지정-id*/
+            .card-bigtext {
+                color: var(--black);
+                font-size: var(--big-text);
+                font-weight: var(--bolder-text);
+            }
+            /*카드 icon 정렬(우측1개)*/
+            .card-icon-right {
+                display: var(--flex);
+                width: 1%;
+                margin: 10px 10px 10px 470px;
+            }
+            
+            /*카드 내용*/
+            .card-view {
+                color: var(--black);
+                font-size: var(--big-text);
+            }
+            /*카드 내용 더보기*/
+            .card-view-more {
+                color: var(--gray);
+                font-size: var(--big-text);
+            }
+            /*글씨속성지정-설명*/
+            .desc {
+                color: var(--gray);
+                font-size: var(--middle-text);
+            }
+            /*카드 오늘의 날짜*/
+            .date {
+                color: var(--gray);
+                font-size: var(--small-text);
+            }
+            .card-bottom{
+                display: var(--flex);
+                margin: 20px 10px 10px 20px;
+            }
+            .bottom-icon{
+                display: var(--flex);
+                margin-top: 5px;
+            }
+            .post-button{
+                display: var(--flex);
+                width: 8%;
+            }
+            /*링크에 기본적용되는 파란줄 없애기*/
+            a:link {
+                text-decoration: var(--none);
+            }
+            a:hover {
+                color: var(--black);
+            }
+            input{
+                display: var(--flex);
+                width: 50%;
+                height: 30px;
+                margin: 0px 10px 0px 20px;
+                border:var(--none);
+            }
+            button{
+                display: var(--flex);
+                justify-content: var(--center);
+                align-content: var(--center);
+                height: 30px;
+                margin: 0px 10px 5px 190px;
+                text-align:var(--center);
+            }
+            .post-button{
+                display: flex;
+                color: var(--blue);
+                background-color: transparent;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 인스타 카드 기능 -->
+        <div class="card" style="width: 40rem">
+            <div class="card-body card-top">
+                <div class="row">
+                    <div class="card-up-picture">
+                        <a href="#about"><img src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="card-up-username">
+                        <a href="#about"><h6 class="card-title card-bigtext">hello_world</h6></a>
+                    </div>
+                    <div class="card-up-modal">
+                        <a href="#about"><i class="fa fa-ellipsis-h fa-lg card-bigtext"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 카드 이미지 -->
+            <img src="static/sample_card_1.png" alt="Instagram image" />
+            <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
+            <div class="row">
+                <div class="card-icon">
+                    <a href="#about"><i class="fa fa-heart fa-lg card-bigtext"></i></a></div>
+                    <div class="card-icon">
+                    <a href="#about"><i class="fa fa-comments fa-lg card-bigtext"></i></a></div>
+                    <div class="card-icon">
+                    <a href="#about"><i class="fa fa-plane fa-lg card-bigtext"></i></a></div>
+                    <div class="card-icon-right">
+                    <a href="#about"><i class="fa fa-bookmark fa-lg card-bigtext"></i></a></div>
+                </div>
+            <!-- 좋아요 수, 닉네임, 내용, 댓글 -->
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="#about" class="card-bigtext">좋아요 342,080개</a><br />
+                    <a href="#about" class="card-bigtext">instagram </a>
+                    <span class="card-view">내용</span>
+                    <a href="#about" class="card-view-more">더보기</a><br />
+                    <a href="#about" class="desc">댓글 1,097개 모두 보기</a><br />
+                    <a href="#about" class="date">4월 28일</a>
+                </li>  
+                    <!-- 댓글란 -->
+                <div class="card-bottom">
+                    <a href="#about" class="card-view bottom-icon">
+                        <i class="fa fa-smile fa-lg"></i>
+                    </a>
+                    <input class="card-view-more"></input>
+                    <button href="#about" class="post-button">게시</button>
+                </li>
+                </div>
+            </ul>
+    </body>
+</html>

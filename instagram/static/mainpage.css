@@ -43,7 +43,9 @@
     display: flex;
     width: 350px;
     margin-right: 10px;
-    background-color: var(--pale-gray);
+    padding: 15px;
+    background-color: var(--white);
+    border: none;
     border-radius: 15px;
 }
 
@@ -263,25 +265,25 @@ a:hover {
 
 .wrap {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
     margin-right: 290px;
 }
 .wrap-card {
     display: flex;
     width: 700px;
     flex-direction: column;
-    margin: 30px 20px 0px 0px;
+    margin: 30px 20px 0px 490px;
 }
 .wrap-side {
     position: fixed;
     width: 350px;
     height: 1000px;
     padding-top: 20px;
-    left: 61%;
 }
 
 /*미디어쿼리 설정*/
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1900px) {
     .wrap-side {
         display: none;
     }

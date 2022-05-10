@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <title>Document</title>
+        <style>
+            /*색상설정*/
+            :root {
+                --white: #ffffff;
+                --beige: #efefef;
+                --palegray: #fafafa;
+                --gray: #8e8e8e;
+                --darkgray: #262626;
+                --blue: #0095f6;
+                --black: #262626;
+            }
+            /*body 전체 적용*/
+            body {
+                margin: 0;
+                background-color: var(--palegray);
+            }
+            /*미디어쿼리*/
+            .container {
+                margin: 30px 0 30px 0;
+            }
+
+            @media screen and (min-width: 500px) {
+                .container {
+                    visibility: hidden;
+                }
+            }
+            /*상단 고정 네비게이션바*/
+            .navbar {
+                overflow: hidden;
+                background-color: var(--white);
+                position: fixed;
+                top: 0;
+                height: 70px;
+                width: 100%;
+                /*가운데정렬*/
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /*상단 입력창 전체 정렬*/
+            form {
+                /*아이콘가운데정렬*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: var(--black);
+                display: flex;
+                padding: 2px;
+                background-color: var(--palegray);
+                border: 1px var solid currentColor;
+                border-radius: 15px;
+                /*검색창 마진*/
+                margin: 30px 50px 30px 50px;
+            }
+
+            /*상단 입력창 감싸는 박스*/
+            form {
+                width: 300px;
+                border-radius: 16px;
+                /*검색창 옆 여백조절*/
+                margin: 10px 50px 10px 240px;
+            }
+
+            /*상단 입력창 (돋보기+입력창)설정*/
+            input.nosubmit {
+                /*내부 여백*/
+                width: 100%;
+                padding: 9px 4px 9px 10px;
+                /*얘가투명*/
+                outline: none;
+                background: transparent;
+            }
+            /*상단 입력창 (입력창)설정*/
+            input[type='search'] {
+                border: none;
+                background: transparent;
+                font-size: 18px;
+            }
+            /*상단 입력시 글씨색*/
+            input[type='search']::placeholder {
+                color: var(--gray);
+            }
+            /*돋보기 아이콘 정렬*/
+            .icon {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            /*우측 아이콘바 정렬*/
+            .icon-bar {
+                margin: 0 0 0 10px;
+                height: 40px;
+                width: 30%;
+            }
+            /*아이콘바 여백 상세설정*/
+            .icon-bar a {
+                float: left;
+                width: 50px;
+                text-align: center;
+                /*각각의 아이콘 내부 여백*/
+                padding: 12px 0px 0px 5px;
+                color: var(--black);
+            }
+            /*좌측 이미지 정렬*/
+            .img_margin {
+                margin: 0px 0px 0px 150px;
+            }
+            .profile_img_margin {
+                margin: 10px 0px 0px 10px;
+            }
+            .big_profile_img_margin {
+                margin: 10px 0px 0px 4px;
+            }
+            /*사이드바 자체 속성*/
+            .sidenav {
+                margin: 50px 0 0 0;
+                width: 25%;
+                height: 100%;
+                position: fixed;
+                z-index: 1;
+                top: 84px;
+                left: 65%;
+            }
+
+            /*사이드바 가로정렬*/
+            .column {
+                float: left;
+            }
+            /*3분할시 가로로정렬*/
+            .row:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+            /*3분할시 가장 왼쪽*/
+            .left {
+                width: 20%;
+            }
+            .middle_left {
+                margin: 0px 0px 0px 5px;
+                width: 20%;
+            }
+            /*3분할시 가운데*/
+            .middle {
+                margin: 23px 5px 0px 20px;
+                width: 60%;
+            }
+            .middle_small {
+                margin: 10px 0px 0px 0px;
+                width: 60%;
+            }
+            /*3분할시 가장 오른쪽*/
+            .right {
+                margin: 30px 0px 0px 5px;
+                width: 11%;
+            }
+            .middle_right {
+                margin: 13px 0px 0px 20px;
+                width: 11%;
+            }
+            /*왼쪽정렬, 오른쪽정렬*/
+            .recommend_left {
+                margin: 18px 40px 8px 12px;
+                width: 35%;
+            }
+            .recommend_right {
+                margin: 18px 0px 0px 118px;
+                width: 13%;
+            }
+            /*프로필 4개 관할하는 창*/
+            .all-browsers {
+                margin: 0;
+                padding: 5px;
+            }
+
+            /*링크에 기본적용되는 파란줄 없애기*/
+            a:link {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: none;
+                color: var(--black);
+            }
+            /*글씨속성지정-id*/
+            .link_id {
+                color: var(--black);
+                font-size: 14px;
+                font-weight: bolder;
+            }
+            /*글씨속성지정-팔로우, 전환*/
+            .link_follow {
+                color: var(--blue);
+                font-size: 12px;
+            }
+            /*글씨속성지정-설명*/
+            .desc {
+                color: var(--gray);
+                font-size: 12px;
+            }
+            /*글씨속성지정-모두보기*/
+            .show_all {
+                color: var(--black);
+                font-weight: bolder;
+                font-size: 12px;
+            }
+            /*글씨속성지정-회원님을 위한 추천*/
+            .recommend {
+                font-weight: bolder;
+                color: var(--gray);
+            }
+            /*글씨속성지정-footer*/
+            footer {
+                text-align: left;
+                padding: 3px;
+                background-color: transparent;
+                color: var(--gray);
+                font-weight: lighter;
+                font-size: 12px;
+            }
+            /*카드 id 정렬*/
+            .card_id_left {
+                margin: 0px 0px 0px 0px;
+                width: 11%;
+            }
+            /*카드 id 정렬*/
+            .card_id_middle {
+                margin: 20px 0px 0px 0px;
+                width: 50%;
+            }
+            /*카드 id 정렬*/
+            .card_id_right {
+                margin: 15px 0px 0px 0px;
+                width: 11%;
+            }
+            /*카드 icon 정렬(좌측3개)*/
+            .card_icon_left {
+                margin: 0px 0px 0px 0px;
+                width: 50%;
+            }
+            /*카드 icon 정렬(우측1개)*/
+            .card_icon_right {
+                margin: 0px 0px 0px 0px;
+                width: 50%;
+            }
+            /*카드 오늘의 날짜*/
+            .date {
+                color: var(--gray);
+                font-size: 10px;
+            }
+            /*카드 내용*/
+            .card_view {
+                color: var(--black);
+                font-size: 14px;
+            }
+            /*카드 내용 더보기*/
+            .card_view_more {
+                color: var(--gray);
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 인스타 카드 기능 -->
+        <div class="card" style="width: 40rem">
+            <div class="card-body">
+                <div class="row">
+                    <div class="card_id_left">
+                        <a href="#about"><img class="profile_img_margin" src="static/small_profile.png" /></a>
+                    </div>
+                    <div class="card_id_middle">
+                        <a href="#about"><h6 class="card-title link_id">hello_world</h6></a>
+                    </div>
+                    <div class="card_id_right">
+                        <a href="#about"><i class="fa fa-ellipsis-h fa-lg link_id"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 카드 이미지 -->
+            <img class="card-img-top" src="static/sample_card_1.png" alt="Instagram image" />
+            <!-- 카드 아래 좋아요, 댓글, DM, 북마크기능-->
+            <div class="row">
+                <div class="card_icon_left">
+                    <a href="#about"><i class="fa fa-heart fa-lg link_id"></i></a>
+                    <a href="#about"><i class="fa fa-comments fa-lg link_id"></i></a>
+                    <a href="#about"><i class="fa fa-plane fa-lg link_id"></i></a>
+                </div>
+                <div class="card_icon_right">
+                    <a href="#about"><i class="fa fa-bookmark fa-lg link_id"></i></a>
+                </div>
+            </div>
+            <!-- 좋아요 수, 닉네임, 내용, 댓글 -->
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="#about" class="link_id">좋아요 342,080개</a><br />
+                    <a href="#about" class="link_id">instagram </a>
+                    <span class="card_view">내용</span>
+                    <a href="#about" class="card_view_more">더보기</a><br />
+                    <a href="#about" class="desc">댓글 1,097개 모두 보기</a><br />
+                    <a href="#about" class="date">4월 28일</a>
+                    <!-- 댓글란 -->
+                    <div class="row">
+                        <li class="list-group-item">
+                            <div class="card_icon_left">
+                                <a href="#about" class="card_view"><i class="fa fa-smile fa-lg"></i></a><span class="card_view_more"> 댓글 달기...</span><a href="#about">게시</a>
+                            </div>
+                        </li>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
