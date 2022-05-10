@@ -53,6 +53,26 @@
         </style>
     </head>
     <body>
+    <div class="wrap-top-bar">
+        <!-- navigation bar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="top-bar">
+                <!-- insta logo -->
+                <img class="top-logo" src="../static/instagram.png" onclick="window.location.reload()" />
+                <!-- search bar -->
+                <input class="top-search " type="search" placeholder=" 🔎 검색" aria-label="Search" />
+                <!-- icon bar -->
+                <div class="top-icon icon">
+                    <span class="material material-symbols-outlined">home</span>
+                    <span class="material material-symbols-outlined">near_me</span>
+                    <span class="material material-icons-outlined">add_box</span>
+                    <span class="material material-icons-outlined">explore</span>
+                    <span class="material material-icons-outlined">favorite_border</span>
+                    <span class="material" onclick="window.location.href='detail.html'"><img class="top-profile-img" src="../static/grass.png" /></span>
+                </div>
+            </div>
+        </nav>
+    </div>
         <!-- modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -73,24 +93,7 @@
                 </div>
             </div>
         </div>
-        <!-- navigation bar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="top-bar">
-                <!-- insta logo -->
-                <img class="top-logo" src="../static/instagram.png" onclick="window.location.reload()" />
-                <!-- search bar -->
-                <input class="top-search " type="search" placeholder=" 🔎 검색" aria-label="Search" />
-                <!-- icon bar -->
-                <div class="top-icon icon">
-                    <span class="material material-symbols-outlined">home</span>
-                    <span class="material material-symbols-outlined">near_me</span>
-                    <span class="material material-icons-outlined">add_box</span>
-                    <span class="material material-icons-outlined">explore</span>
-                    <span class="material material-icons-outlined">favorite_border</span>
-                    <span class="material" onclick="window.location.href='detail.html'"><img class="top-profile-img" src="../static/grass.png" /></span>
-                </div>
-            </div>
-        </nav>
+        
 
         <!-- card -->
         <div class="wrap">

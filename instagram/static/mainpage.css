@@ -13,6 +13,15 @@
     --small-text: 10px;
     --bolder-text: 700;
 }
+
+.wrap-top-bar {
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    border-bottom: 1px solid var(--light-gray);
+    background-color: var(--light-gray);
+    z-index: 99;
+}
 /*상단바 border*/
 .navbar {
     position: fixed;
@@ -26,8 +35,10 @@
 
 /*상단바 메뉴정렬*/
 .top-bar {
+    position: fixed;
     display: flex;
     margin-left: 500px;
+    z-index: 99;
 }
 
 /*상단바 인스타그램이미지정렬*/
@@ -266,20 +277,19 @@ a:hover {
 .wrap {
     display: flex;
     flex-direction: column;
-
     margin-right: 290px;
 }
 .wrap-card {
     display: flex;
     width: 700px;
     flex-direction: column;
-    margin: 30px 20px 0px 490px;
+    margin: 130px 20px 0px 490px;
 }
 .wrap-side {
     position: fixed;
     width: 350px;
     height: 1000px;
-    padding-top: 20px;
+    padding-top: 150px;
 }
 
 /*미디어쿼리 설정*/
