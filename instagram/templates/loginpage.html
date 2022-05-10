@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <link href="../static\loginpage.css" rel="stylesheet" />
+        <link rel="shortcut icon" type="image/x-icon" href="../static\images\favicon.ico" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+        <title>instagram-login</title>
+        <style>
+            .is-hidden {
+                display: none;
+            }
+        </style>
+        <script>
+            function toggle_sign_up() {
+                $('#no-sign').addClass('is-hidden');
+                $('#sign-box').removeClass('is-hidden');
+                $('#id_value').addClass('is-hidden');
+                $('#password_value').addClass('is-hidden');
+                $('#regi-id').removeClass('is-hidden');
+                $('#regi-name').removeClass('is-hidden');
+                $('#regi-username').removeClass('is-hidden');
+                $('#regi-pw').removeClass('is-hidden');
+                $('#btn_register').removeClass('is-hidden');
+                $('#btn_login').addClass('is-hidden');
+                $('#forget_pw').addClass('is-hidden');
+                $('#register_text').removeClass('is-hidden');
+            }
+
+            function toggle_sign() {
+                $('#sign-box').addClass('is-hidden');
+                $('#no-sign').removeClass('is-hidden');
+                $('#id_value').removeClass('is-hidden');
+                $('#password_value').removeClass('is-hidden');
+                $('#regi-id').addClass('is-hidden');
+                $('#regi-name').addClass('is-hidden');
+                $('#regi-username').addClass('is-hidden');
+                $('#regi-pw').addClass('is-hidden');
+                $('#btn_register').addClass('is-hidden');
+                $('#btn_login').removeClass('is-hidden');
+                $('#forget_pw').removeClass('is-hidden');
+                $('#register_text').addClass('is-hidden');
+            }
+
+            function sign_up() {
+                let id = $('#regi-id').val();
+                let name = $('#regi-name').val();
+                let username = $('#regi-username').val();
+                let pw = $('#regi-pw').val();
+
+                console.log(id, pw);
+
+                if ((id == '', pw == '', name == '', username == '')) {
+                    alert('빈칸을 입력해주세요!');
+                    return;
+                }
+
+                if (!is_password(pw)) {
+                    alert('비밀번호의 형식을 확인해주세요. 영문과 숫자 필수 포함, 특수문자(!@#$%^&*) 사용가능 8-20자');
+                    $('#regi-pw').focus();
+                    return;
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/sign_up/save',
+                    data: {
+                        id_give: id,
+                        name_give: name,
+                        username_give: username,
+                        pw_give: pw,
+                    },
+                    success: function (response) {
+                        alert('회원가입을 축하드립니다!');
+                        window.location.replace('/login');
+                    },
+                });
+            }
+
+            function is_password(asValue) {
+                var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%^&*]{8,20}$/; //정규표현식
+                return regExp.test(asValue);
+            }
+
+            function check_id() {
+                let id = $('#regi-id').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/sign_up/check_id',
+                    data: {
+                        id_give: id,
+                    },
+                    success: function (response) {
+                        if (response['exists']) {
+                            alert('이미 존재하는 아이디입니다.');
+                            $('#regi-id').focus();
+                        } else {
+                            check_username();
+                        }
+                    },
+                });
+            }
+
+            function check_username() {
+                let username = $('#regi-username').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/sign_up/check_username',
+                    data: {
+                        username_give: username,
+                    },
+                    success: function (response) {
+                        if (response['exists']) {
+                            alert('이미 존재하는 사용자이름입니다.');
+                            $('#regi-username').focus();
+                        } else {
+                            sign_up();
+                        }
+                    },
+                });
+            }
+
+            function sign_in() {
+                let id = $('#id_value').val();
+                let pw = $('#password_value').val();
+
+                if ((id == '', pw == '')) {
+                    alert('빈칸을 입력해주세요!');
+                    return;
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/sign_in',
+                    data: {
+                        id_give: id,
+                        pw_give: pw,
+                    },
+                    success: function (response) {
+                        if (response['result'] == 'success') {
+                            $.cookie('mytoken', response['token'], { path: '/' });
+                            window.location.replace('/');
+                        } else {
+                            alert(response['msg']);
+                        }
+                    },
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top-bottom" style="margin-right: 100px">
+                <div class="item1" style="margin-right: 100px">
+                    <div class="phone" style="position: absolute; top: 0">
+                        <img src="../static\images\iphone2.png" style="x-index: 1; height: 755px; margin-top: 70px; margin-right: 50px" />
+                    </div>
+                    <div class="photo">
+                        <img src="../static\images\login01.png" alt="" style="width: 301px; height: 600px; margin-left: 229px; margin-top: 5px" />
+                    </div>
+                </div>
+                <div class="item2" style="margin-right: 60px; position: relative">
+                    <div class="main-box">
+                        <img class="instagram_logo" src="../static\images\loginlogo.png" alt="instagram_logo" />
+                        <p id="register_text" class="is-hidden" style="color: #8e8e8e; font-size: 17px; text-align: center">
+                            <b
+                                >친구들의 사진과 동영상을 보려면<br />
+                                가입하세요.</b
+                            >
+                        </p>
+                        <div class="privacy">
+                            <input id="id_value" class="id_value" placeholder="전화번호, 사용자 이름 또는 이메일" />
+                            <input id="password_value" class="password_value" type="password" placeholder="비밀번호" style="width: 258px; height: 36px" />
+                            <input id="regi-id" class="register_id is-hidden" placeholder="휴대폰 번호 또는 이메일 주소" />
+                            <input id="regi-name" class="register_id is-hidden" placeholder="성명" />
+                            <input id="regi-username" class="register_id is-hidden" placeholder="사용자 이름" />
+                            <input id="regi-pw" class="register_pw is-hidden" type="password" placeholder="비밀번호" />
+                        </div>
+                        <button onclick="sign_in()" id="btn_login" style="margin: 0px; cursor: pointer">로그인</button>
+                        <button onclick="check_id()" onclick="check_username()" onclick="sign_up()" id="btn_register" class="is-hidden" style="margin: 0px; cursor: pointer">가입</button>
+                        <div class="facebook-login"></div>
+                        <span class="password_forgot" id="forget_pw" style="cursor: pointer; margin-top: 50px">비밀번호를 잊으셨나요?</span>
+                    </div>
+                    <div class="signup-box" id="no-sign">
+                        계정이 없으신가요? <span class="signup" style="padding: 0 0 0 4px" onclick="toggle_sign_up()"><strong>가입하기</strong></span>
+                    </div>
+                    <div class="signup-box is-hidden" id="sign-box">
+                        계정이 있으신가요? <span class="signup" style="padding: 0 0 0 4px" onclick="toggle_sign()"><strong>로그인</strong></span>
+                    </div>
+                    <div class="app_download">
+                        <p class="text_down">앱을 다운로드하세요.</p>
+                        <div class="app_image" style="cursor: pointer">
+                            <img src="../static\images\appstore.png" style="width: 136px; cursor: pointer" />
+                            <img src="../static\images\googleplay.png" style="width: 134.2px; cursor: pointer" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer" style="margin-top: 120px">
+                <span>
+                    Meta 소개 블로그 채용 정보 도움말 API 개인정보처리방침 약관 인기 계정 해시태그 위치 Instagram Lite <br />
+                    댄스 식음료 집 및 정원 음악 시각예술</span
+                ><br />
+                <span> © 2022 Instagram from Meta </span>
+            </div>
+        </div>
+    </body>
+</html>
