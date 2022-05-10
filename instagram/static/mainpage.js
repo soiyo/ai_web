@@ -20,3 +20,13 @@ modal.addEventListener('click', (event) => {
         }
     }
 });
+
+function cardview() {
+    if (this.parentNode.getElementsByTagName('div')[0].style.display != '') {
+        this.parentNode.getElementsByTagName('div')[0].style.display = '';
+        this.value = '숨기기';
+    } else {
+        this.parentNode.getElementsByTagName('div')[0].style.display = 'none';
+        this.value = '더보기';
+    }
+}

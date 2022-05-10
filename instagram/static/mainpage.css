@@ -305,7 +305,7 @@ button {
     background-color: transparent;
 }
 .modal-body {
-    padding-top: 300px;
+    margin-top: 300px;
 }
 .modal-button {
     width: 410px;
@@ -318,4 +318,15 @@ button {
     border: 1px solid var(--light-grays);
     color: var(--red);
     font-weight: var(--bolder-text);
+}
+
+/*피드 이미지크기 설정*/
+.carousel-item {
+    height: 600px;
+    width: 700px;
+}
+/*피드이미지 크기 */
+.feed-img {
+    width: 100%;
+    height: 100%;
 }
