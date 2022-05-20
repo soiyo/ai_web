@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sparta Vocabulary Notebook</title>
+        <meta property="og:title" content="Sparta Vocabulary Notebook" />
+        <meta property="og:description" content="mini project for Web Plus" />
+        <meta property="og:image" content="{{ url_for('static', filename='logo_red.png') }}" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+        <!-- css, js file separate in static folder -->
+        <link rel="stylesheet" href="../static/style/mystyle.css" type="text/css" />
+        <!--<script type="script" src="../static/scripts/mainpage.js"></script>-->
+        <!--<script type="module" src="../static/scripts/mainpage.js"></script>-->
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            span.example {
+                color: gray;
+                font-size: 14px;
+            }
+
+            .btn-sparta {
+                color: #fff;
+                background-color: #e8344e;
+                border-color: #e8344e;
+            }
+
+            .btn-outline-sparta {
+                color: #e8344e;
+                background-color: transparent;
+                background-image: none;
+                border-color: #e8344e;
+            }
+        </style>
+        <script>
+            let word = "{{ word }}"
+            $(document).ready(function () {
+                {% if status=="old" %}
+                    get_examples()
+                {% endif %}
+            })
+
+            function save_word() {
+                $.ajax({
+                    type: "POST",
+                    url: `/api/save_word`,
+                    data: {
+                        word_give: "{{ word }}",
+                        definition_give: "{{ result.definitions[0].definition }}"
+                    },
+                    success: function (response) {
+                        alert(response["msg"])
+                        window.location.href = "/detail/{{ word }}?status=old"
+                    }
+                });
+            }
+
+            function delete_word() {
+                $.ajax({
+                    type: "POST",
+                    url: `/api/delete_word`,
+                    data: {
+                        word_give: '{{ word }}',
+                    },
+                    success: function (response) {
+                        alert(response["msg"])
+                        window.location.href = "/"
+                    }
+                });
+            }
+
+            function get_examples() {
+                $("#example-list").empty()
+                $.ajax({
+                    type: "GET",
+                    url: `/api/get_examples?word_give=${word}`,
+                    data: {},
+                    success: function (response) {
+                        let examples = response["examples"];
+                        for (let i = 0; i < examples.length; i++) {
+                            let example = examples[i]["example"];
+                            console.log(example)
+                            let html_temp = `<li id="ex-${i}">${example}&nbsp;&nbsp;&nbsp;<a
+                            href="javascript:delete_ex(${i})">delete</a></li>`
+                            $("#example-list").append(html_temp)
+                        }
+                    }
+                });
+            }
+
+            function add_ex() {
+                let new_ex = $('#new-example').val();
+                if (!new_ex.toLowerCase().includes(word.toLowerCase())) {
+                    alert(`the word '${word}' is not included.`);
+                    return;
+                }
+                console.log(new_ex)
+                $.ajax({
+                    type: "POST",
+                    url: `/api/save_ex`,
+                    data: {
+                        word_give: word,
+                        example_give: new_ex
+                    },
+                    success: function (response) {
+                        get_examples();
+                        $('#new-example').val("");
+                    }
+                });
+
+
+            }
+
+            function delete_ex(i) {
+                console.log("deleting", i)
+                $.ajax({
+                    type: "POST",
+                    url: `/api/delete_ex`,
+                    data: {
+                        word_give: word,
+                        number_give: i
+                    },
+                    success: function (response) {
+                        get_examples()
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="banner" onclick="window.location.href = '/'"></div>
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end">
+                    <div>
+                        <h1 id="word" style="display: inline">{{ result.word }}</h1>
+                        {% if result.pronunciation %}
+                        <h5 id="pronunciation" style="display: inline">/{{ result.pronunciation }}/</h5>
+                        {% endif %}
+                    </div>
+                    {% if status=="new" %}
+                    <button id="btn-save" class="btn btn-outline-sparta btn-lg" onclick="save_word()"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                    {% else %}
+                    <button id="btn-delete" class="btn btn-sparta btn-lg" onclick="delete_word()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    {% endif %}
+                </div>
+                <hr />
+                <div id="definitions">
+                    {% set definitions = result.definitions %} {% for definition in definitions %}
+                    <div style="padding: 10px">
+                        <i>{{ definition.type }}</i>
+                        <br />{{ definition.definition.encode('ascii', 'ignore').decode('utf-8') }}<br />
+                        {% if definition.example %}
+                        <span class="example">{{ definition.example.encode('ascii', 'ignore').decode('utf-8') }}</span>
+                        {% endif %} {% if definition.image_url %}
+                        <span class="example"> <img src="{{ definition.image_url }}" alt="image alt text" /></span>
+                        {% endif %} {% if definition.emoji %}
+                        <span class="example">{{ definition.emoji }}</span>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% if status=="old" %}
+            <div id="examples" class="container">
+                <h3 style="text-align: center; margin-bottom: 1rem">Write your own sentences!</h3>
+                <ul id="example-list">
+                    <li id="ex-0">This sentence contains the word 'word'.&nbsp;&nbsp;&nbsp;<a href="javascript:delete_ex(0)">delete</a></li>
+                    <li id="ex-1">I don't like using the MS Word program.&nbsp;&nbsp;&nbsp;<a href="javascript:delete_ex(1)">delete</a></li>
+                </ul>
+                <div class="d-flex justify-content-between" style="margin-left: 20px">
+                    <input id="new-example" class="form-control form-control-sm" style="margin-right: 0.5rem" />
+                    <button class="btn btn-outline-secondary btn-sm" onclick="add_ex()">add</button>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
