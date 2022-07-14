@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!--jQuery import-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        {% for simpson in simpsons %}
+        <p id="{{simpson.name}}">{{simpson.name}}</p>
+        <p>{{simpson.quote}}</p>
+
+        {% endfor %}
+
+        <!--jQuery-->
+        <p id="box"></p>
+        <input type="text" id="simpsonname" placeholder="name" />
+        <input type="text" id="simpsonquote" placeholder="quote" />
+        <button type="button" onclick="posting()">저장하기</button>
+
+        <script>
+            $(document).ready(function () {
+                show();
+            });
+            function show() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/profile',
+                    data: {},
+                    success: function (response) {
+                        let rows = response['intro'];
+                        for (let i = 0; i < rows.length; i++) {
+                            let name = rows[i]['name'];
+                            let quote = rows[i]['quote'];
+
+                            let temp_html = `<p>${simpsonname}</p>
+                                            <p>${simpsonquote}</p>`;
+                            $('#box').append(temp_html);
+                        }
+                    },
+                });
+            }
+
+            function posting() {
+                let new_name = $('#simpsonname').val();
+                let new_quote = $('#simpsonquote').val();
+
+                console.log(new_name);
+                console.log(new_quote);
+                $.ajax({
+                    type: 'POST',
+                    url: '/postsimpson',
+                    data: {
+                        name_give: new_name,
+                        quote_give: new_quote,
+                    },
+                    success: function (response) {
+                        alert(response['msg']);
+                        window.location.reload();
+                    },
+                });
+            }
+        </script>
+    </body>
+</html>
