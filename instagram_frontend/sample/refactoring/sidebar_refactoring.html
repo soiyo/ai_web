@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>사이드바</title>
+    </head>
+    <style>
+        :root {
+            --white: #ffffff;
+            --beige: #efefef;
+            --pale-gray: #fafafa;
+            --light-gray: #d3d3d3;
+            --gray: #8e8e8e;
+            --dark-gray: #262626;
+            --blue: #0095f6;
+            --black: #262626;
+            --big-text: 14px;
+            --middle-text: 12px;
+            --small-text: 10px;
+        }
+        /*우측피드 정렬*/
+        .side {
+            position: fixed;
+            width: 350px;
+            height: 1000px;
+            padding-top: 20px;
+            left: 61%;
+        }
+        /*피드이름 정렬*/
+        .side-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        /*내 프로필사진 정렬*/
+        .side-big-profilebox {
+            width: 60px;
+            height: 60px;
+            border-radius: 70%;
+            overflow: hidden;
+        }
+        /*피드위 이미지 정렬*/
+        .side-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        /*이름 정렬*/
+        .side-name-text {
+            display: flex;
+            flex-direction: column;
+        }
+        /*팔로우/전환텍스트 설정*/
+        .side-follow-text {
+            display: block;
+            margin-top: 20px;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /*회원님을 위한 추천 설정*/
+        .side-recommendbox {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            align-items: center;
+            padding: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        /*피드내용이름 정렬*/
+        .side-small-profile-namebox {
+            margin: 5px 130px 0px 0px;
+            padding: 0px 10px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /*피드위 프로필박스 정렬*/
+        .side-small-profile-imgbox {
+            width: 40px;
+            height: 40px;
+            border-radius: 70%;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        /*이름 밑 내용 정렬*/
+        .side-small-profile-desc {
+            width: 190px;
+            font-size: 12px;
+            padding: 0px 10px;
+            font-weight: bold;
+            color: var(--gray);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /*피드 더보기버튼 설정*/
+        .side-footer {
+            display: flex;
+            flex-direction: column;
+            margin: 30px 80px 0px 5px;
+            color: var(--light-gray);
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+
+    <body>
+        <!--우측 피드영역-->
+        <div class="side">
+            <div class="side-item">
+                <div class="side-big-profilebox">
+                    <img class="side-img" src="static/animal_1.png" />
+                </div>
+                <div class="side-name-text">
+                    <a class="side-small-profile-namebox"> m_nvely </a>
+                </div>
+                <div>
+                    <span class="side-follow-text"> 전환 </span>
+                </div>
+            </div>
+            <div class="side-recommendbox">
+                <div>
+                    <span style="color: var(--gray)"> 회원님을 위한 추천 </span>
+                </div>
+                <div>
+                    <span style="font-size: var(--middle-text); cursor: pointer"> 모두 보기 </span>
+                </div>
+            </div>
+
+            <div>
+                <div class="side-item">
+                    <div class="side-small-profile-imgbox">
+                        <img class="side-img" src="static/animal_1.png" />
+                    </div>
+                    <div class="side-name-text">
+                        <span class="side-small-profile-namebox"> IU </span>
+                        <span class="side-small-profile-desc"> Instargram 신규가입 </span>
+                    </div>
+                    <a class="side-follow-text"> 팔로우 </a>
+                </div>
+                <div class="side-item">
+                    <div class="side-small-profile-imgbox">
+                        <img class="side-img" src="static/animal_1.png" />
+                    </div>
+                    <div class="side-name-text">
+                        <span class="side-small-profile-namebox"> IU </span>
+                        <span class="side-small-profile-desc"> Instargram 신규가입 </span>
+                    </div>
+                    <a class="side-follow-text"> 팔로우 </a>
+                </div>
+                <div class="side-item">
+                    <div class="side-small-profile-imgbox">
+                        <img class="side-img" src="static/animal_1.png" />
+                    </div>
+                    <div class="side-name-text">
+                        <span class="side-small-profile-namebox"> IU </span>
+                        <span class="side-small-profile-desc"> Instargram 신규가입 </span>
+                    </div>
+                    <a class="side-follow-text"> 팔로우 </a>
+                </div>
+                <div class="side-item">
+                    <div class="side-small-profile-imgbox">
+                        <img class="side-img" src="static/animal_1.png" />
+                    </div>
+                    <div class="side-name-text">
+                        <span class="side-small-profile-namebox"> IU </span>
+                        <span class="side-small-profile-desc"> Instargram 신규가입 </span>
+                    </div>
+                    <a class="side-follow-text"> 팔로우 </a>
+                </div>
+                <div class="side-item">
+                    <div class="side-small-profile-imgbox">
+                        <img class="side-img" src="static/animal_1.png" />
+                    </div>
+                    <div class="side-name-text">
+                        <span class="side-small-profile-namebox"> IU </span>
+                        <span class="side-small-profile-desc"> Instargram 신규가입 </span>
+                    </div>
+                    <a class="side-follow-text"> 팔로우 </a>
+                </div>
+            </div>
+            <div class="side-footer">
+                <span> 인스타그램 클론 코딩 </span>
+                <span> https://velog.io/@ansaudwn123 </span>
+                <br />
+                <span> @2022 Moonmoo </span>
+            </div>
+        </div>
+    </body>
+</html>
